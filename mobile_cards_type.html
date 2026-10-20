@@ -1,0 +1,28 @@
+<!doctype html>
+<html lang="ko">
+<head>
+  <meta charset="utf-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1, viewport-fit=cover">
+  <meta name="theme-color" content="#f4f6fa">
+  <title>암기 방식 선택 - 모바일 학습</title>
+  <link rel="stylesheet" href="mobile.css">
+  <script src="mobile.js" defer></script>
+</head>
+<body>
+  <main class="mobile-page" data-mobile-page="card-type">
+    <header class="mobile-header">
+      <a class="mobile-back" href="mobile_words.html">← 단어 목록</a>
+      <h1 class="mobile-title">암기 방식 선택</h1>
+    </header>
+    <p class="mobile-status" role="status" aria-live="polite">자료를 불러오는 중입니다.</p>
+    <section class="mobile-list mobile-mode-list" aria-label="암기 방식">
+      <button class="mobile-day" type="button" data-mode="word">
+        <strong>단어 제시</strong><small>영어 단어를 먼저 보고 뜻을 확인합니다.</small>
+      </button>
+      <button class="mobile-day" type="button" data-mode="meaning">
+        <strong>의미 제시</strong><small>뜻과 유사어를 먼저 보고 영어 단어를 확인합니다.</small>
+      </button>
+    </section>
+  </main>
+</body>
+</html>

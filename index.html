@@ -1,0 +1,2313 @@
+<!doctype html>
+<html lang="ko">
+<head>
+  <meta charset="utf-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1">
+  <title>PDF 단어장</title>
+  <style>
+    :root {
+      color-scheme: light;
+      font-family: "Segoe UI", "Malgun Gothic", sans-serif;
+      color: #202a3b;
+      background: #f4f6fa;
+      font-synthesis: none;
+    }
+
+    * { box-sizing: border-box; }
+
+    body { margin: 0; }
+
+    main {
+      width: min(1120px, calc(100% - 32px));
+      margin: 40px auto;
+    }
+
+    h1 { margin: 0; font-size: 28px; }
+
+    .intro {
+      margin: 10px 0 24px;
+      color: #5f6b7c;
+      line-height: 1.6;
+    }
+
+    .panel {
+      padding: 24px;
+      border: 1px solid #e0e5ed;
+      border-radius: 14px;
+      background: #fff;
+      box-shadow: 0 8px 24px rgb(31 45 71 / 5%);
+    }
+
+    .controls {
+      display: flex;
+      flex-wrap: wrap;
+      align-items: end;
+      gap: 14px;
+    }
+
+    .field { display: grid; gap: 7px; }
+
+    label, .field-label {
+      font-size: 14px;
+      font-weight: 650;
+    }
+
+    input[type="file"], input[type="number"] {
+      min-height: 42px;
+      padding: 8px 10px;
+      border: 1px solid #cbd3df;
+      border-radius: 8px;
+      background: #fff;
+      color: inherit;
+    }
+
+    input[type="file"] { width: min(100%, 430px); }
+    input[type="number"] { width: 110px; }
+
+    button {
+      min-height: 42px;
+      padding: 0 16px;
+      border: 0;
+      border-radius: 8px;
+      background: #225bd6;
+      color: #fff;
+      font: inherit;
+      font-weight: 650;
+      cursor: pointer;
+    }
+
+    button.secondary { background: #e9eef8; color: #233d70; }
+    button:disabled { cursor: not-allowed; opacity: .5; }
+
+    .hint, .status, .summary {
+      color: #5f6b7c;
+      font-size: 14px;
+      line-height: 1.55;
+    }
+
+    .hint { margin: 16px 0 0; }
+
+    .status {
+      min-height: 24px;
+      margin: 16px 0 0;
+      color: #3156a4;
+      font-weight: 600;
+    }
+
+    .status.error { color: #b42318; }
+    .audio-status.error { color: #b42318; }
+    .global-status { margin: -10px 0 16px; }
+    .save-validation { margin: 10px 0 0; }
+    .save-validation.error { color: #b42318; }
+
+    .results {
+      display: grid;
+      grid-template-columns: minmax(0, 1fr) minmax(0, 1fr);
+      gap: 20px;
+      margin-top: 20px;
+    }
+
+    .subpanel {
+      min-width: 0;
+      padding: 18px;
+      border: 1px solid #e0e5ed;
+      border-radius: 12px;
+      background: #fff;
+    }
+
+    h2 { margin: 0 0 14px; font-size: 17px; }
+
+    .page-frame {
+      display: grid;
+      min-height: 260px;
+      place-items: center;
+      overflow: auto;
+      padding: 12px;
+      border-radius: 8px;
+      background: #eef1f6;
+    }
+
+    canvas {
+      display: block;
+      max-width: 100%;
+      height: auto;
+      background: white;
+      box-shadow: 0 2px 12px rgb(31 45 71 / 14%);
+    }
+
+    .empty {
+      color: #7a8595;
+      font-size: 14px;
+      text-align: center;
+    }
+
+    .summary { margin: 0 0 10px; }
+
+    .text-output {
+      min-height: 120px;
+      max-height: 320px;
+      overflow: auto;
+      margin: 0;
+      padding: 14px;
+      border-radius: 8px;
+      background: #f7f8fb;
+      color: #263248;
+      font: 14px/1.7 Consolas, "Malgun Gothic", monospace;
+      white-space: pre-wrap;
+      overflow-wrap: anywhere;
+    }
+
+    .card-list { display: grid; gap: 12px; }
+    .preview-heading { display: flex; align-items: center; justify-content: space-between; gap: 12px; margin-bottom: 10px; }
+    .preview-heading h2 { margin: 0; }
+
+    .card-preview {
+      padding: 14px;
+      border: 1px solid #e0e5ed;
+      border-radius: 10px;
+      background: #fff;
+    }
+
+    .card-preview.needs-review {
+      border-color: #e5bd73;
+      background: #fffaf0;
+    }
+
+    .card-title {
+      display: flex;
+      align-items: center;
+      justify-content: space-between;
+      gap: 10px;
+      margin: 0 0 12px;
+      font-size: 16px;
+    }
+
+    .page-origin { color: #5f6b7c; font-size: 12px; font-weight: 500; }
+
+    .review-badge {
+      flex: 0 0 auto;
+      padding: 3px 8px;
+      border-radius: 999px;
+      background: #fff0c2;
+      color: #7a4b00;
+      font-size: 12px;
+      font-weight: 650;
+    }
+
+    .card-fields { display: grid; gap: 8px; }
+
+    .preview-field {
+      display: grid;
+      grid-template-columns: 90px minmax(0, 1fr);
+      align-items: start;
+      gap: 8px;
+      font-size: 13px;
+    }
+
+    .preview-field > span { padding-top: 8px; color: #5f6b7c; }
+
+    .preview-input {
+      width: 100%;
+      min-height: 36px;
+      padding: 7px 9px;
+      border: 1px solid #cbd3df;
+      border-radius: 7px;
+      background: #fff;
+      color: inherit;
+      font: inherit;
+    }
+
+    .review-reasons {
+      margin: 10px 0 0;
+      padding-left: 18px;
+      color: #7a4b00;
+      font-size: 12px;
+      line-height: 1.5;
+    }
+
+    details.raw-ocr { margin-top: 16px; }
+    details.raw-ocr > summary { cursor: pointer; font-size: 13px; }
+
+    .app-nav {
+      display: flex;
+      flex-wrap: wrap;
+      gap: 8px;
+      margin: 22px 0;
+    }
+
+    .app-nav button[aria-current="page"] { background: #173f9e; }
+    .app-nav .mobile-link { display: inline-flex; align-items: center; padding: 0 16px; border-radius: 8px; background: #e9eef8; color: #233d70; font-weight: 650; text-decoration: none; }
+
+    [hidden] { display: none !important; }
+
+    .deck-form { display: grid; gap: 16px; }
+    .learn-controls { margin-top: 16px; }
+
+    .deck-form .field input[type="text"] {
+      width: min(100%, 360px);
+      min-height: 42px;
+      padding: 8px 10px;
+      border: 1px solid #cbd3df;
+      border-radius: 8px;
+      font: inherit;
+    }
+
+    .card-actions, .deck-actions, .learn-controls {
+      display: flex;
+      flex-wrap: wrap;
+      align-items: center;
+      gap: 8px;
+    }
+
+    .button-small {
+      min-height: 34px;
+      padding: 0 11px;
+      font-size: 13px;
+    }
+
+    .button-danger { background: #a83232; }
+
+    .status.success { color: #197044; }
+
+    .audio-status { margin: 0; color: #5f6b7c; font-size: 13px; }
+
+    .deck-list, .day-selector {
+      display: grid;
+      gap: 10px;
+    }
+
+    .deck-row, .day-option {
+      display: flex;
+      align-items: center;
+      justify-content: space-between;
+      gap: 14px;
+      padding: 14px;
+      border: 1px solid #e0e5ed;
+      border-radius: 10px;
+      background: #fff;
+    }
+
+    .deck-info { min-width: 0; }
+    .deck-info strong { display: block; }
+    .deck-info small { color: #697587; }
+
+    .day-option { justify-content: flex-start; cursor: pointer; }
+    .day-option input { width: 18px; height: 18px; }
+
+    .study-card {
+      position: relative;
+      min-height: 320px;
+      margin-top: 18px;
+      overflow: hidden;
+      border: 1px solid #dbe2ee;
+      border-radius: 16px;
+      background: #fff;
+      box-shadow: 0 8px 24px rgb(31 45 71 / 5%);
+      cursor: pointer;
+      text-align: center;
+    }
+
+    .study-card:focus-visible { outline: 3px solid #79a4ff; }
+
+    .study-front {
+      position: absolute;
+      inset: 0 0 50%;
+      display: grid;
+      place-items: center;
+      padding: 16px;
+      color: #1f335a;
+      font-size: clamp(28px, 6vw, 44px);
+      font-weight: 700;
+    }
+
+    .study-front.is-meaning-prompt {
+      overflow: auto;
+      font-size: clamp(18px, 4vw, 28px);
+      line-height: 1.45;
+      overflow-wrap: anywhere;
+    }
+    .study-prompt-meanings { display: grid; gap: 10px; width: 100%; }
+    .study-prompt-meaning { display: grid; gap: 2px; }
+    .study-prompt-synonyms { font-size: 0.58em; font-weight: 400; }
+
+    .study-back {
+      position: absolute;
+      inset: 47% 0 0;
+      display: grid;
+      align-content: start;
+      gap: 8px;
+      overflow: auto;
+      padding: clamp(12px, 3vw, 22px);
+      transform: translateY(100%);
+      background: #78D024;
+      color: #FFFFFF;
+      transition: transform 420ms ease;
+      text-align: left;
+    }
+
+    .study-card.is-flipped .study-back { transform: translateY(0); }
+    .study-meaning {
+      padding: 10px 12px;
+      border-radius: 8px;
+      background: rgb(0 0 0 / 55%);
+    }
+    .study-meaning strong { display: block; margin-bottom: 5px; }
+    .study-meaning span { color: #FFFFFF; font-size: 14px; }
+    .study-answer { font-size: clamp(28px, 6vw, 44px); overflow-wrap: anywhere; }
+
+    @media (prefers-reduced-motion: reduce) {
+      .study-back { transition: none; }
+    }
+
+    .study-toolbar {
+      display: flex;
+      flex-wrap: wrap;
+      align-items: center;
+      justify-content: space-between;
+      gap: 12px;
+      margin-top: 16px;
+    }
+
+    .study-toolbar button.secondary { min-width: 46px; }
+
+    .favorite-button {
+      min-width: 46px;
+      background: #fff0c2;
+      color: #7a4b00;
+    }
+
+    .study-empty { padding: 34px 12px; color: #697587; text-align: center; }
+
+    @media (max-width: 760px) {
+      main { margin: 24px auto; }
+      .panel { padding: 18px; }
+      .results { grid-template-columns: 1fr; }
+      .deck-row { align-items: flex-start; flex-direction: column; }
+    }
+
+    @media (max-width: 600px) {
+      .study-card {
+        min-height: clamp(340px, 58svh, 520px);
+        margin-top: 12px;
+      }
+
+      .study-front { padding: 12px; }
+      .study-back { padding: 14px; }
+      .study-meaning { padding: 12px; }
+      .study-toolbar { gap: 8px; margin-top: 12px; }
+      .study-toolbar .deck-actions { width: 100%; justify-content: space-between; }
+    }
+  </style>
+</head>
+<body>
+  <main>
+    <h1>PDF 단어장</h1>
+    <p class="intro">텍스트 기반 PDF에서 표제어를 추출해 DAY 자료로 저장하고, 저장한 단어장을 학습합니다.</p>
+
+    <nav class="app-nav" aria-label="주요 화면">
+      <button type="button" data-view="add" aria-current="page">자료 추가</button>
+      <button type="button" data-view="decks">자료 관리</button>
+      <button type="button" data-view="learn">학습하기</button>
+      <a class="mobile-link" href="mobile.html">모바일 학습</a>
+    </nav>
+    <p id="app-status" class="status global-status" role="status" aria-live="polite" hidden></p>
+
+    <section id="add-view" class="view">
+    <section class="panel" aria-label="자료명 및 PDF 오디오 파일 입력">
+      <div class="deck-form">
+        <div class="controls">
+          <div class="field">
+            <label for="deck-name">자료명 (예: DAY 11)</label>
+            <input id="deck-name" type="text" maxlength="80" autocomplete="off">
+          </div>
+          <div class="field">
+            <label for="html-file">오디오 링크가 포함된 HTML (선택)</label>
+            <input id="html-file" type="file" accept=".html,.htm,text/html">
+          </div>
+        </div>
+        <p id="audio-status" class="audio-status">HTML 파일을 선택하면 표제어와 오디오 URL만 추출해 매칭합니다.</p>
+      </div>
+    </section>
+
+    <section class="panel" aria-label="PDF 업로드 및 텍스트 추출">
+      <div class="controls">
+        <div class="field">
+          <label for="pdf-file">PDF 파일</label>
+          <input id="pdf-file" type="file" accept=".pdf,application/pdf">
+        </div>
+        <div class="field">
+          <label for="page-number">미리보기 페이지</label>
+          <input id="page-number" type="number" min="1" value="1" disabled>
+        </div>
+        <button id="render-button" class="secondary" type="button" disabled>페이지 미리보기</button>
+        <button id="extract-text-button" type="button" disabled>전체 PDF 텍스트 추출</button>
+        <button id="save-deck-button" type="button" disabled>검토한 자료 저장</button>
+        <button id="cancel-edit-button" class="secondary" type="button" hidden>수정 취소</button>
+      </div>
+      <p id="save-validation" class="hint save-validation" role="status" aria-live="polite">저장소를 확인하는 중입니다.</p>
+    </section>
+
+    <section class="results" aria-label="페이지 및 텍스트 추출 결과">
+      <div class="subpanel">
+        <h2>페이지 미리보기</h2>
+        <div id="page-frame" class="page-frame">
+          <span class="empty">PDF의 페이지 미리보기가 여기에 표시됩니다.</span>
+        </div>
+      </div>
+      <div class="subpanel">
+        <div class="preview-heading">
+          <h2>표제어별 추출 미리보기</h2>
+          <button id="add-manual-card-button" class="secondary button-small" type="button">카드 직접 추가</button>
+        </div>
+        <p id="summary" class="summary">아직 텍스트를 추출하지 않았습니다.</p>
+        <div id="card-preview" class="card-list">
+          <span class="empty">텍스트 추출 후 표제어별 결과가 표시됩니다.</span>
+        </div>
+        <details class="raw-pdf-text">
+          <summary>PDF 내부 텍스트 전체 보기</summary>
+          <pre id="pdf-text-output" class="text-output">추출된 텍스트가 여기에 표시됩니다.</pre>
+        </details>
+      </div>
+    </section>
+    </section>
+
+    <section id="decks-view" class="view" hidden>
+      <section class="panel" aria-label="JSON 배포 파일">
+        <h2>JSON 배포 파일</h2>
+        <p class="hint">
+          자료는 브라우저에 저장됩니다. JSON을 내려받아 <code>index.html</code> 옆의
+          <code>decks.json</code>을 교체하고 Git에 커밋한 뒤 Push하면 배포됩니다.
+        </p>
+        <div class="deck-actions">
+          <button id="download-json-button" type="button" disabled>decks.json 다운로드</button>
+          <button id="reload-json-button" class="secondary" type="button" disabled>프로젝트 JSON 다시 불러오기</button>
+          <span id="deck-data-summary" class="summary" aria-live="polite">자료를 불러오는 중입니다.</span>
+        </div>
+        <p class="hint">
+          파일 교체 후 다시 불러오면 변경을 확인할 수 있습니다. 배포 예:
+          <code>git add decks.json</code> → <code>git commit -m "Update vocabulary data"</code> → <code>git push</code>
+        </p>
+        <p id="download-json-status" class="status" role="status" aria-live="polite">
+          브라우저 저장 자료를 JSON으로 내려받아 배포할 수 있습니다.
+        </p>
+      </section>
+      <section class="panel">
+        <h2>저장된 자료</h2>
+        <p class="hint">자료를 수정하거나 삭제해도 선택한 자료만 변경됩니다.</p>
+        <div id="deck-list" class="deck-list" aria-live="polite"></div>
+      </section>
+    </section>
+
+    <section id="learn-view" class="view" hidden>
+      <section class="panel">
+        <h2>학습할 DAY 선택</h2>
+        <p id="offline-status" class="hint" role="status" aria-live="polite">처음 온라인으로 열면 앱과 자료 JSON을 저장해 오프라인 학습을 준비합니다. 오디오는 재생 버튼을 눌렀을 때만 연결합니다.</p>
+        <div id="day-selector" class="day-selector"></div>
+        <div class="learn-controls">
+          <label class="day-option"><input id="favorites-only" type="checkbox"> 즐겨찾기만 보기</label>
+          <label class="day-option"><input id="meaning-to-word" type="checkbox"> 뜻 보고 영어 단어 맞히기</label>
+          <span id="study-count" class="summary">자료를 선택해 주세요.</span>
+        </div>
+        <div id="study-area"></div>
+      </section>
+    </section>
+  </main>
+
+  <script>
+    (() => {
+      const pdfFileInput = document.getElementById("pdf-file");
+      const deckNameInput = document.getElementById("deck-name");
+      const htmlFileInput = document.getElementById("html-file");
+      const pageNumberInput = document.getElementById("page-number");
+      const renderButton = document.getElementById("render-button");
+      const extractTextButton = document.getElementById("extract-text-button");
+      const saveDeckButton = document.getElementById("save-deck-button");
+      const saveValidation = document.getElementById("save-validation");
+      const cancelEditButton = document.getElementById("cancel-edit-button");
+      const pageFrame = document.getElementById("page-frame");
+      const summary = document.getElementById("summary");
+      const cardPreview = document.getElementById("card-preview");
+      const addManualCardButton = document.getElementById("add-manual-card-button");
+      const output = document.getElementById("pdf-text-output");
+      const deckList = document.getElementById("deck-list");
+      const daySelector = document.getElementById("day-selector");
+      const studyArea = document.getElementById("study-area");
+      const studyCount = document.getElementById("study-count");
+      const offlineStatus = document.getElementById("offline-status");
+      const favoritesOnlyInput = document.getElementById("favorites-only");
+      const meaningToWordInput = document.getElementById("meaning-to-word");
+      const audioStatus = document.getElementById("audio-status");
+      const downloadJsonButton = document.getElementById("download-json-button");
+      const reloadJsonButton = document.getElementById("reload-json-button");
+      const deckDataSummary = document.getElementById("deck-data-summary");
+      const downloadJsonStatus = document.getElementById("download-json-status");
+      let pdfjs = null;
+      let pdfParserLoad = null;
+      let tesseractLoad = null;
+      let pdfDocument = null;
+      let renderedCanvas = null;
+      let busy = false;
+      let pdfExtractionFailed = false;
+      let db = null;
+      let currentCards = [];
+      let htmlAudioEntries = [];
+      let editingDeckId = null;
+      let storedDecks = [];
+      let selectedDeckIds = new Set();
+      let studyQueue = [];
+      let studyIndex = 0;
+      let studyFlipped = false;
+      let activeReviewAudio = null;
+
+      pdfFileInput.addEventListener("change", loadPdf);
+      deckNameInput.addEventListener("input", updateSaveButton);
+      pageNumberInput.addEventListener("change", renderSelectedPage);
+      renderButton.addEventListener("click", renderSelectedPage);
+      extractTextButton.addEventListener("click", extractPdfText);
+      htmlFileInput.addEventListener("change", loadAudioHtml);
+      saveDeckButton.addEventListener("click", saveCurrentDeck);
+      addManualCardButton.addEventListener("click", addManualCard);
+      cancelEditButton.addEventListener("click", cancelDeckEdit);
+      cardPreview.addEventListener("input", updateCardField);
+      cardPreview.addEventListener("change", handlePreviewChange);
+      cardPreview.addEventListener("click", handlePreviewClick);
+      document.querySelectorAll(".app-nav button").forEach((button) =>
+        button.addEventListener("click", () => showView(button.dataset.view))
+      );
+      deckList.addEventListener("click", handleDeckListClick);
+      daySelector.addEventListener("change", updateSelectedDecks);
+      favoritesOnlyInput.addEventListener("change", rebuildStudyQueue);
+      meaningToWordInput.addEventListener("change", rebuildStudyQueue);
+      studyArea.addEventListener("click", handleStudyClick);
+      downloadJsonButton.addEventListener("click", downloadDecksJson);
+      reloadJsonButton.addEventListener("click", reloadProjectDecks);
+      void registerOfflineSupport();
+      void initializeApp();
+
+      async function registerOfflineSupport() {
+        if (!("serviceWorker" in navigator) || !["http:", "https:"].includes(window.location.protocol)) {
+          offlineStatus.textContent = "오프라인으로 다시 열려면 앱을 localhost 또는 HTTPS 주소에서 한 번 열어야 합니다. file:// 주소는 오프라인 캐시를 지원하지 않습니다.";
+          return;
+        }
+        try {
+          const serviceWorkerUrl = new URL("service-worker.js", document.baseURI);
+          await navigator.serviceWorker.register(serviceWorkerUrl.href);
+          await navigator.serviceWorker.ready;
+          offlineStatus.textContent = "오프라인 학습이 준비되었습니다. 자료는 이 브라우저에 저장되며, 오디오는 재생 버튼을 눌렀을 때만 연결합니다.";
+        } catch (error) {
+          offlineStatus.textContent = `오프라인 캐시를 준비하지 못했습니다. HTTPS 또는 localhost에서 열고 브라우저의 사이트 데이터 저장을 허용해 주세요. ${errorMessage(error)}`;
+        }
+      }
+
+      async function initializeApp() {
+        if (!("indexedDB" in window)) {
+          setStatus("이 브라우저에서는 로컬 데이터베이스를 사용할 수 없습니다.", true);
+          return;
+        }
+        try {
+          db = await openDatabase();
+          try {
+            await loadPublishedDecksIfEmpty();
+          } catch (error) {
+            setStatus(`decks.json을 불러오지 못했습니다. 기존 로컬 자료는 유지됩니다. ${errorMessage(error)}`, true);
+          }
+          await refreshDecks();
+          downloadJsonButton.disabled = false;
+          reloadJsonButton.disabled = false;
+          updateSaveButton();
+        } catch (error) {
+          setStatus(`로컬 저장소를 열지 못했습니다. 브라우저 저장소 설정을 확인해 주세요. ${errorMessage(error)}`, true);
+        }
+      }
+
+      function openDatabase() {
+        return new Promise((resolve, reject) => {
+          const request = indexedDB.open("vaca-card-library", 1);
+          request.onupgradeneeded = () => {
+            const database = request.result;
+            if (!database.objectStoreNames.contains("decks")) {
+              const store = database.createObjectStore("decks", { keyPath: "id" });
+              store.createIndex("normalizedName", "normalizedName", { unique: true });
+            }
+          };
+          request.onsuccess = () => {
+            request.result.onversionchange = () => request.result.close();
+            resolve(request.result);
+          };
+          request.onerror = () => reject(request.error || new Error("IndexedDB 초기화 실패"));
+          request.onblocked = () => reject(new Error("다른 탭에서 저장소를 사용 중입니다. 다른 탭을 닫고 다시 시도해 주세요."));
+        });
+      }
+
+      function makeId(prefix) {
+        if (window.crypto && typeof window.crypto.randomUUID === "function") {
+          return `${prefix}-${window.crypto.randomUUID()}`;
+        }
+        return `${prefix}-${Date.now().toString(36)}-${Math.random().toString(36).slice(2)}`;
+      }
+
+      function loadExternalScript(url, isLoaded) {
+        if (isLoaded()) return Promise.resolve();
+        return new Promise((resolve, reject) => {
+          const script = document.createElement("script");
+          script.src = url;
+          script.onload = () => {
+            if (isLoaded()) resolve();
+            else reject(new Error(`스크립트가 로드되었지만 라이브러리를 찾을 수 없습니다: ${url}`));
+          };
+          script.onerror = () => reject(new Error(`외부 라이브러리를 불러오지 못했습니다: ${url}`));
+          document.head.append(script);
+        });
+      }
+
+      async function ensurePdfParserLoaded() {
+        if (!pdfParserLoad) {
+          pdfParserLoad = loadExternalScript(
+            "https://cdnjs.cloudflare.com/ajax/libs/pdf.js/3.11.174/pdf.min.js",
+            () => Boolean(window.pdfjsLib)
+          ).then(() => {
+            pdfjs = window.pdfjsLib;
+            pdfjs.GlobalWorkerOptions.workerSrc =
+              "https://cdnjs.cloudflare.com/ajax/libs/pdf.js/3.11.174/pdf.worker.min.js";
+          }).catch((error) => {
+            pdfParserLoad = null;
+            throw new Error(`PDF 파서를 불러오지 못했습니다. 인터넷 연결을 확인한 뒤 다시 시도해 주세요. ${errorMessage(error)}`);
+          });
+        }
+        await pdfParserLoad;
+      }
+
+      async function ensureTesseractLoaded() {
+        if (!tesseractLoad) {
+          tesseractLoad = loadExternalScript(
+            "https://cdn.jsdelivr.net/npm/tesseract.js@5.1.1/dist/tesseract.min.js",
+            () => Boolean(window.Tesseract)
+          ).catch((error) => {
+            tesseractLoad = null;
+            throw new Error(`OCR 엔진을 불러오지 못했습니다. 온라인 상태에서 PDF 추출을 다시 시도해 주세요. ${errorMessage(error)}`);
+          });
+        }
+        await tesseractLoad;
+      }
+
+      function getAllDecks() {
+        return new Promise((resolve, reject) => {
+          const transaction = db.transaction("decks", "readonly");
+          const request = transaction.objectStore("decks").getAll();
+          request.onsuccess = () => resolve(request.result);
+          request.onerror = () => reject(request.error || new Error("자료 조회 실패"));
+          transaction.onerror = () => reject(transaction.error || new Error("자료 조회 트랜잭션 실패"));
+        });
+      }
+
+      function putDeck(deck) {
+        return new Promise((resolve, reject) => {
+          const transaction = db.transaction("decks", "readwrite");
+          transaction.objectStore("decks").put(deck);
+          transaction.oncomplete = () => resolve();
+          transaction.onerror = () => reject(transaction.error || new Error("자료 저장 실패"));
+          transaction.onabort = () => reject(transaction.error || new Error("자료 저장이 취소되었습니다."));
+        });
+      }
+
+      function replaceDecks(decks) {
+        return new Promise((resolve, reject) => {
+          const transaction = db.transaction("decks", "readwrite");
+          const store = transaction.objectStore("decks");
+          store.clear();
+          for (const deck of decks) store.put(deck);
+          transaction.oncomplete = () => resolve();
+          transaction.onerror = () => reject(transaction.error || new Error("자료 묶음 저장 실패"));
+          transaction.onabort = () => reject(transaction.error || new Error("자료 묶음 저장이 취소되었습니다."));
+        });
+      }
+
+      async function loadPublishedDecksIfEmpty() {
+        if (!["http:", "https:"].includes(window.location.protocol)) return;
+        if ((await getAllDecks()).length) return;
+
+        const jsonUrl = new URL("decks.json", document.baseURI);
+        jsonUrl.searchParams.set("_", String(Date.now()));
+        let response;
+        try {
+          response = await fetch(jsonUrl.href, { method: "GET", cache: "no-store" });
+        } catch (error) {
+          throw new Error(`상대 경로 ${jsonUrl.pathname} 요청 실패: ${errorMessage(error)}`);
+        }
+        if (!response.ok) {
+          throw new Error(`상대 경로 ${jsonUrl.pathname}에서 JSON을 읽지 못했습니다 (HTTP ${response.status}).`);
+        }
+
+        let payload;
+        try {
+          payload = await response.json();
+        } catch (error) {
+          throw new Error(`상대 경로 ${jsonUrl.pathname}의 JSON을 해석하지 못했습니다. ${errorMessage(error)}`);
+        }
+        const decks = validateDecks(payload.decks);
+        await replaceDecks(decks);
+      }
+
+      function removeDeck(id) {
+        return new Promise((resolve, reject) => {
+          const transaction = db.transaction("decks", "readwrite");
+          transaction.objectStore("decks").delete(id);
+          transaction.oncomplete = () => resolve();
+          transaction.onerror = () => reject(transaction.error || new Error("자료 삭제 실패"));
+          transaction.onabort = () => reject(transaction.error || new Error("자료 삭제가 취소되었습니다."));
+        });
+      }
+
+      async function refreshDecks() {
+        storedDecks = (await getAllDecks()).sort((a, b) =>
+          a.name.localeCompare(b.name, "ko", { numeric: true, sensitivity: "base" })
+        );
+        renderDeckList();
+        renderDaySelector();
+        rebuildStudyQueue();
+        const cardCount = storedDecks.reduce((total, deck) => total + deck.cards.length, 0);
+        deckDataSummary.textContent = `${storedDecks.length}개 자료 · ${cardCount}개 카드`;
+      }
+
+      function showView(viewName) {
+        document.querySelectorAll(".view").forEach((view) => {
+          view.hidden = view.id !== `${viewName}-view`;
+        });
+        document.querySelectorAll(".app-nav button").forEach((button) => {
+          if (button.dataset.view === viewName) button.setAttribute("aria-current", "page");
+          else button.removeAttribute("aria-current");
+        });
+        if (viewName === "decks" || viewName === "learn") {
+          refreshDecks().then(() => {
+            if (viewName === "learn") selectMostRecentlyRegisteredDeck();
+          }).catch((error) => {
+            setStatus(`자료 목록을 불러오지 못했습니다. ${errorMessage(error)}`, true);
+          });
+        }
+      }
+
+      function selectMostRecentlyRegisteredDeck() {
+        const latestDeck = storedDecks.reduce((latest, deck) => {
+          const registeredAt = Date.parse(deck.createdAt || deck.updatedAt || "") || 0;
+          const latestRegisteredAt = latest
+            ? Date.parse(latest.createdAt || latest.updatedAt || "") || 0
+            : -1;
+          return registeredAt > latestRegisteredAt ? deck : latest;
+        }, null);
+        selectedDeckIds = new Set(latestDeck ? [latestDeck.id] : []);
+        renderDaySelector();
+        rebuildStudyQueue();
+      }
+
+      async function loadAudioHtml() {
+        htmlAudioEntries = [];
+        const file = htmlFileInput.files && htmlFileInput.files[0];
+        if (!file) {
+          audioStatus.textContent = "HTML 파일을 선택하면 표제어와 오디오 URL만 추출해 매칭합니다.";
+          return;
+        }
+        if (!/\.html?$/i.test(file.name) && file.type !== "text/html") {
+          audioStatus.textContent = "지원하지 않는 파일입니다. HTML 파일을 선택해 주세요.";
+          audioStatus.classList.add("error");
+          return;
+        }
+        try {
+          const parser = new DOMParser();
+          const documentFromFile = parser.parseFromString(await file.text(), "text/html");
+          const cards = [...documentFromFile.querySelectorAll(".flip-body .flip-card")];
+          const candidates = cards.length ? cards : [...documentFromFile.querySelectorAll(".flip-card")];
+          htmlAudioEntries = candidates.flatMap((card) => {
+            const front = card.querySelector(".flip-card-front");
+            const audioButtons = [...card.querySelectorAll(".btn-audio[data-src]")];
+            const word = front ? front.textContent.trim().replace(/\s+/g, " ") : "";
+            return word ? audioButtons.map((button) => ({
+              word,
+              audioUrl: safeAudioUrl(button.getAttribute("data-src"))
+            })).filter((entry) => entry.audioUrl) : [];
+          });
+          if (!htmlAudioEntries.length) {
+            throw new Error("Classcard 카드 앞면(.flip-card-front)과 오디오(.btn-audio[data-src])를 찾지 못했습니다.");
+          }
+          matchAudioToCards();
+          audioStatus.classList.remove("error");
+          audioStatus.textContent = `HTML에서 ${htmlAudioEntries.length}개의 단어·오디오 매핑을 읽었습니다. PDF 표제어와 정확히 일치하는 항목만 연결합니다.`;
+        } catch (error) {
+          htmlAudioEntries = [];
+          audioStatus.textContent = `HTML을 파싱하지 못했습니다. ${errorMessage(error)}`;
+          audioStatus.classList.add("error");
+        }
+      }
+
+      function safeAudioUrl(value) {
+        const source = String(value || "").trim();
+        if (!source) return "";
+        if (!/^[a-z][a-z\d+.-]*:/i.test(source)) {
+          return source.startsWith("//") ? "" : source;
+        }
+        try {
+          const resolved = new URL(source, window.location.href);
+          return ["http:", "https:", "blob:"].includes(resolved.protocol) ? resolved.href : "";
+        } catch {
+          return "";
+        }
+      }
+
+      function matchAudioToCards() {
+        if (!currentCards.length) return;
+        for (const card of currentCards) {
+          card.audioUrl = "";
+          card.audioInputInvalid = false;
+          card.audioStatus = "오디오 없음";
+          card.reviewReasons = (card.reviewReasons || []).filter((reason) =>
+            !reason.startsWith("HTML에서 동일 표제어의 오디오가 여러 개")
+          );
+          const matches = htmlAudioEntries.filter((entry) =>
+            entry.word.trim().toLowerCase() === card.front.trim().toLowerCase()
+          );
+          const urls = [...new Set(matches.map((entry) => entry.audioUrl))];
+          if (urls.length === 1) {
+            card.audioUrl = urls[0];
+            card.audioStatus = "정확히 일치";
+          }
+          else if (urls.length > 1) {
+            card.reviewReasons.push("HTML에서 동일 표제어의 오디오가 여러 개 발견되어 검토가 필요합니다.");
+            card.reviewDone = false;
+            card.audioStatus = "중복 검토";
+          }
+        }
+        renderCards(currentCards);
+        updateSaveButton();
+      }
+
+      function renderDeckList() {
+        if (!storedDecks.length) {
+          deckList.replaceChildren(makeEmpty("저장된 자료가 없습니다."));
+          return;
+        }
+        const fragment = document.createDocumentFragment();
+        for (const deck of storedDecks) {
+          const row = document.createElement("article");
+          row.className = "deck-row";
+          const info = document.createElement("div");
+          info.className = "deck-info";
+          const name = document.createElement("strong");
+          name.textContent = deck.name;
+          const details = document.createElement("small");
+          details.textContent = `${deck.cards.length}개 카드 · 수정 ${new Date(deck.updatedAt).toLocaleString("ko-KR")}`;
+          info.append(name, details);
+          const actions = document.createElement("div");
+          actions.className = "deck-actions";
+          actions.append(
+            makeActionButton("수정", "edit-deck", deck.id, "secondary button-small"),
+            makeActionButton("삭제", "delete-deck", deck.id, "button-danger button-small")
+          );
+          row.append(info, actions);
+          fragment.append(row);
+        }
+        deckList.replaceChildren(fragment);
+      }
+
+      function makeActionButton(text, action, id, className) {
+        const button = document.createElement("button");
+        button.type = "button";
+        button.className = className;
+        button.dataset.action = action;
+        button.dataset.id = id;
+        button.textContent = text;
+        return button;
+      }
+
+      function renderDaySelector() {
+        if (!storedDecks.length) {
+          daySelector.replaceChildren(makeEmpty("저장된 자료가 없습니다. 먼저 자료를 추가해 주세요."));
+          return;
+        }
+        const fragment = document.createDocumentFragment();
+        for (const deck of storedDecks) {
+          const label = document.createElement("label");
+          label.className = "day-option";
+          const checkbox = document.createElement("input");
+          checkbox.type = "checkbox";
+          checkbox.value = deck.id;
+          checkbox.checked = selectedDeckIds.has(deck.id);
+          const text = document.createElement("span");
+          text.textContent = `${deck.name} · ${deck.cards.length}개`;
+          label.append(checkbox, text);
+          fragment.append(label);
+        }
+        daySelector.replaceChildren(fragment);
+      }
+
+      function updateSelectedDecks() {
+        selectedDeckIds = new Set([...daySelector.querySelectorAll("input:checked")].map((input) => input.value));
+        rebuildStudyQueue();
+      }
+
+      function rebuildStudyQueue() {
+        const selectedCards = storedDecks
+          .filter((deck) => selectedDeckIds.has(deck.id))
+          .flatMap((deck) => deck.cards.map((card) => ({ ...card, deckName: deck.name })));
+        studyQueue = favoritesOnlyInput.checked
+          ? selectedCards.filter((card) => card.favorite)
+          : selectedCards;
+        studyIndex = Math.min(studyIndex, Math.max(0, studyQueue.length - 1));
+        studyFlipped = false;
+        studyCount.textContent = studyQueue.length
+          ? `총 ${studyQueue.length}개 카드`
+          : selectedDeckIds.size
+            ? "선택한 DAY에 표시할 카드가 없습니다."
+            : "자료를 선택해 주세요.";
+        renderStudyCard();
+      }
+
+      function renderStudyCard() {
+        if (!studyQueue.length) {
+          studyArea.replaceChildren(makeEmpty(favoritesOnlyInput.checked
+            ? "선택한 DAY에 즐겨찾기 카드가 없습니다."
+            : "학습할 DAY를 선택해 주세요."));
+          return;
+        }
+        const card = studyQueue[studyIndex];
+        const wrapper = document.createDocumentFragment();
+        const cardElement = document.createElement("div");
+        cardElement.className = "study-card";
+        cardElement.classList.toggle("is-flipped", studyFlipped);
+        const meaningToWord = meaningToWordInput.checked;
+        cardElement.tabIndex = 0;
+        cardElement.setAttribute("role", "button");
+        cardElement.setAttribute("aria-label", studyFlipped ? "문제 다시 보기" : meaningToWord ? "정답 보기" : "뜻 보기");
+        cardElement.setAttribute("aria-pressed", String(studyFlipped));
+        const front = document.createElement("div");
+        front.className = "study-front";
+        if (meaningToWord) {
+          front.classList.add("is-meaning-prompt");
+          const prompts = document.createElement("div");
+          prompts.className = "study-prompt-meanings";
+          card.meanings.forEach((meaning) => {
+            if (!meaning.text && !meaning.synonyms.length) return;
+            const prompt = document.createElement("div");
+            prompt.className = "study-prompt-meaning";
+            if (meaning.text) {
+              const meaningText = document.createElement("strong");
+              meaningText.textContent = meaning.text;
+              prompt.append(meaningText);
+            }
+            if (meaning.synonyms.length) {
+              const synonyms = document.createElement("span");
+              synonyms.className = "study-prompt-synonyms";
+              synonyms.textContent = `유사어: ${meaning.synonyms.join(", ")}`;
+              prompt.append(synonyms);
+            }
+            prompts.append(prompt);
+          });
+          front.append(prompts);
+        } else {
+          front.textContent = card.front;
+        }
+        const back = document.createElement("div");
+        back.className = "study-back";
+        back.setAttribute("aria-hidden", String(!studyFlipped));
+        if (meaningToWord) {
+          const answer = document.createElement("strong");
+          answer.className = "study-answer";
+          answer.textContent = card.front;
+          back.append(answer);
+        } else card.meanings.forEach((meaning) => {
+          const section = document.createElement("div");
+          section.className = "study-meaning";
+          const meaningText = document.createElement("strong");
+          const partOfSpeechValue = Object.prototype.hasOwnProperty.call(meaning, "partOfSpeech")
+            ? meaning.partOfSpeech
+            : card.partOfSpeech;
+          const partOfSpeech = formatPartOfSpeech(partOfSpeechValue);
+          meaningText.textContent = `${partOfSpeech ? `${partOfSpeech} ` : ""}${meaning.text}`;
+          section.append(meaningText);
+          if (meaning.synonyms.length) {
+            const synonymText = document.createElement("span");
+            synonymText.textContent = `유사어: ${meaning.synonyms.join(", ")}`;
+            section.append(synonymText);
+          }
+          back.append(section);
+        });
+        cardElement.append(front, back);
+        const toggleCard = () => {
+          studyFlipped = !studyFlipped;
+          cardElement.classList.toggle("is-flipped", studyFlipped);
+          cardElement.setAttribute("aria-label", studyFlipped ? "문제 다시 보기" : meaningToWord ? "정답 보기" : "뜻 보기");
+          cardElement.setAttribute("aria-pressed", String(studyFlipped));
+          back.setAttribute("aria-hidden", String(!studyFlipped));
+        };
+        cardElement.addEventListener("click", toggleCard);
+        cardElement.addEventListener("keydown", (event) => {
+          if (event.key === "Enter" || event.key === " ") {
+            event.preventDefault();
+            toggleCard();
+          }
+        });
+        const toolbar = document.createElement("div");
+        toolbar.className = "study-toolbar";
+        const position = document.createElement("span");
+        position.className = "summary";
+        position.textContent = `${studyIndex + 1} / ${studyQueue.length}`;
+        const actions = document.createElement("div");
+        actions.className = "deck-actions";
+        const previousButton = document.createElement("button");
+        previousButton.type = "button";
+        previousButton.className = "secondary";
+        previousButton.dataset.action = "previous-card";
+        previousButton.textContent = "이전";
+        previousButton.disabled = studyIndex === 0;
+        const nextButton = document.createElement("button");
+        nextButton.type = "button";
+        nextButton.className = "secondary";
+        nextButton.dataset.action = "next-card";
+        nextButton.textContent = "다음";
+        nextButton.disabled = studyIndex >= studyQueue.length - 1;
+        const audioButton = document.createElement("button");
+        audioButton.type = "button";
+        audioButton.className = "secondary";
+        audioButton.dataset.action = "play-audio";
+        audioButton.setAttribute("aria-label", card.audioUrl ? "발음 재생" : "오디오 없음");
+        audioButton.textContent = card.audioUrl ? "🔊" : "🔇";
+        audioButton.disabled = !card.audioUrl;
+        const favoriteButton = document.createElement("button");
+        favoriteButton.type = "button";
+        favoriteButton.className = "favorite-button";
+        favoriteButton.dataset.action = "toggle-favorite";
+        favoriteButton.textContent = card.favorite ? "★ 즐겨찾기" : "☆ 즐겨찾기";
+        actions.append(previousButton, nextButton, audioButton, favoriteButton);
+        toolbar.append(position, actions);
+        wrapper.append(cardElement, toolbar);
+        studyArea.replaceChildren(wrapper);
+      }
+
+      async function downloadDecksJson() {
+        downloadJsonButton.disabled = true;
+        downloadJsonStatus.textContent = "저장된 자료를 JSON 파일로 준비하는 중입니다.";
+        downloadJsonStatus.classList.remove("error", "success");
+        try {
+          const decks = (await getAllDecks()).sort((a, b) =>
+            a.name.localeCompare(b.name, "ko", { numeric: true, sensitivity: "base" })
+          );
+          const payload = `${JSON.stringify({ decks }, null, 2)}\n`;
+          const blobUrl = URL.createObjectURL(new Blob([payload], { type: "application/json;charset=utf-8" }));
+          const link = document.createElement("a");
+          link.href = blobUrl;
+          link.download = "decks.json";
+          document.body.append(link);
+          link.click();
+          link.remove();
+          window.setTimeout(() => URL.revokeObjectURL(blobUrl), 1000);
+          downloadJsonStatus.textContent =
+            `decks.json 다운로드를 시작했습니다 (${decks.length}개 자료). 프로젝트의 index.html 옆 파일을 교체한 뒤 커밋하고 Push하세요.`;
+          downloadJsonStatus.classList.add("success");
+        } catch (error) {
+          downloadJsonStatus.textContent = `JSON 파일을 만들지 못했습니다. 브라우저 다운로드 설정과 로컬 자료를 확인해 주세요. ${errorMessage(error)}`;
+          downloadJsonStatus.classList.add("error");
+        } finally {
+          downloadJsonButton.disabled = !db;
+          reloadJsonButton.disabled = !db;
+        }
+      }
+
+      async function reloadProjectDecks() {
+        if (!["http:", "https:"].includes(window.location.protocol)) {
+          downloadJsonStatus.textContent = "프로젝트 JSON을 읽으려면 앱을 HTTP 로컬 서버나 GitHub Pages에서 열어야 합니다. file:// 주소에서는 브라우저 보안상 파일을 읽을 수 없습니다.";
+          downloadJsonStatus.classList.add("error");
+          return;
+        }
+        if (!window.confirm("프로젝트의 decks.json으로 현재 브라우저 자료를 모두 교체할까요? 아직 JSON으로 내보내지 않은 로컬 변경 사항은 사라집니다.")) return;
+
+        reloadJsonButton.disabled = true;
+        downloadJsonStatus.textContent = "프로젝트의 decks.json을 다시 불러오는 중입니다.";
+        downloadJsonStatus.classList.remove("error", "success");
+        try {
+          const jsonUrl = new URL("decks.json", document.baseURI);
+          jsonUrl.searchParams.set("_", String(Date.now()));
+          const response = await fetch(jsonUrl.href, { method: "GET", cache: "no-store" });
+          if (!response.ok) {
+            throw new Error(`decks.json 요청 실패 (HTTP ${response.status}).`);
+          }
+          let payload;
+          try {
+            payload = await response.json();
+          } catch (error) {
+            throw new Error(`decks.json 형식이 올바르지 않습니다. ${errorMessage(error)}`);
+          }
+          const decks = validateDecks(payload.decks);
+          await replaceDecks(decks);
+          await refreshDecks();
+          downloadJsonStatus.textContent = `프로젝트 decks.json에서 ${decks.length}개 자료를 불러왔습니다.`;
+          downloadJsonStatus.classList.add("success");
+        } catch (error) {
+          downloadJsonStatus.textContent = `프로젝트 JSON을 불러오지 못했습니다. 기존 브라우저 자료는 유지됩니다. ${errorMessage(error)}`;
+          downloadJsonStatus.classList.add("error");
+        } finally {
+          reloadJsonButton.disabled = !db;
+        }
+      }
+
+      function validateDecks(decks) {
+        if (!Array.isArray(decks)) {
+          throw new Error("decks.json에 decks 배열이 없습니다. 파일 형식과 기존 로컬 자료를 확인해 주세요.");
+        }
+        for (const [index, deck] of decks.entries()) {
+          if (!deck || typeof deck !== "object" || typeof deck.id !== "string" ||
+              typeof deck.name !== "string" || !Array.isArray(deck.cards)) {
+            throw new Error(`decks.json의 ${index + 1}번째 자료 구조가 올바르지 않습니다. 기존 로컬 자료는 변경하지 않았습니다.`);
+          }
+          for (const [cardIndex, card] of deck.cards.entries()) {
+            if (!card || typeof card !== "object" || typeof card.id !== "string" ||
+                typeof card.front !== "string" || !Array.isArray(card.meanings)) {
+              throw new Error(`"${deck.name}" 자료의 ${cardIndex + 1}번째 카드 구조가 올바르지 않습니다. 기존 로컬 자료는 변경하지 않았습니다.`);
+            }
+            for (const [meaningIndex, meaning] of card.meanings.entries()) {
+              if (!meaning || typeof meaning.text !== "string" ||
+                  !Array.isArray(meaning.synonyms) ||
+                  meaning.synonyms.some((synonym) => typeof synonym !== "string")) {
+                throw new Error(`"${deck.name}" 자료의 ${cardIndex + 1}번째 카드 뜻 ${meaningIndex + 1}의 구조가 올바르지 않습니다. 기존 로컬 자료는 변경하지 않았습니다.`);
+              }
+            }
+          }
+        }
+        return decks;
+      }
+
+      async function handleStudyClick(event) {
+        const button = event.target.closest("button[data-action]");
+        if (!button) {
+          if (event.target.closest(".study-card")) return;
+          return;
+        }
+        const card = studyQueue[studyIndex];
+        if (!card && !["previous-card", "next-card"].includes(button.dataset.action)) return;
+        if (button.dataset.action === "previous-card" && studyIndex > 0) {
+          studyIndex--;
+          studyFlipped = false;
+          renderStudyCard();
+        } else if (button.dataset.action === "next-card" && studyIndex < studyQueue.length - 1) {
+          studyIndex++;
+          studyFlipped = false;
+          renderStudyCard();
+        } else if (button.dataset.action === "play-audio") {
+          event.stopPropagation();
+          if (!card.audioUrl) return;
+          try {
+            const audio = new Audio(card.audioUrl);
+            await audio.play();
+          } catch (error) {
+            studyCount.textContent = `오디오 재생에 실패했습니다. ${errorMessage(error)}`;
+          }
+        } else if (button.dataset.action === "toggle-favorite") {
+          await setFavorite(card);
+        }
+      }
+
+      function formatPartOfSpeech(value) {
+        const partOfSpeech = String(value || "").trim();
+        if (!partOfSpeech) return "";
+        const abbreviations = {
+          "명사": "명",
+          "동사": "동",
+          "형용사": "형",
+          "부사": "부",
+          "전치사": "전",
+          "접속사": "접",
+          "대명사": "대",
+          "감탄사": "감"
+        };
+        return `[${abbreviations[partOfSpeech] || partOfSpeech}]`;
+      }
+
+      async function setFavorite(card) {
+        const deck = storedDecks.find((item) => item.id === card.deckId);
+        if (!deck) {
+          setStatus("즐겨찾기를 저장할 자료를 찾지 못했습니다.", true);
+          return;
+        }
+        const storedCard = deck.cards.find((item) => item.id === card.id);
+        if (!storedCard) {
+          setStatus("즐겨찾기를 저장할 카드를 찾지 못했습니다.", true);
+          return;
+        }
+        storedCard.favorite = !storedCard.favorite;
+        deck.updatedAt = new Date().toISOString();
+        try {
+          await putDeck(deck);
+          await refreshDecks();
+        } catch (error) {
+          storedCard.favorite = !storedCard.favorite;
+          setStatus(`즐겨찾기를 저장하지 못했습니다. ${errorMessage(error)}`, true);
+          return;
+        }
+        rebuildStudyQueue();
+      }
+
+      async function handleDeckListClick(event) {
+        const button = event.target.closest("button[data-action]");
+        if (!button) return;
+        const deck = storedDecks.find((item) => item.id === button.dataset.id);
+        if (!deck) return;
+        if (button.dataset.action === "edit-deck") {
+          editingDeckId = deck.id;
+          deckNameInput.value = deck.name;
+          currentCards = deck.cards.map((card) => ({
+            ...card,
+            meanings: card.meanings.map((meaning) => ({
+              ...meaning,
+              partOfSpeech: Object.prototype.hasOwnProperty.call(meaning, "partOfSpeech")
+                ? meaning.partOfSpeech
+                : card.partOfSpeech || "",
+            })),
+            reviewReasons: [],
+            reviewDone: true,
+            audioStatus: card.audioUrl ? "매칭됨" : "오디오 없음"
+          }));
+          htmlAudioEntries = [];
+          htmlFileInput.value = "";
+          cancelEditButton.hidden = false;
+          renderCards(currentCards);
+          updateSaveButton();
+          setStatus(`${deck.name} 자료를 수정합니다. 저장 전까지 원본 자료는 유지됩니다.`);
+          showView("add");
+        } else if (button.dataset.action === "delete-deck") {
+          if (!window.confirm(`"${deck.name}" 자료와 ${deck.cards.length}개 카드를 삭제할까요?`)) return;
+          try {
+            await removeDeck(deck.id);
+            selectedDeckIds.delete(deck.id);
+            await refreshDecks();
+          } catch (error) {
+            setStatus(`자료를 삭제하지 못했습니다. ${errorMessage(error)}`, true);
+          }
+        }
+      }
+
+      async function saveCurrentDeck() {
+        if (!db) {
+          setStatus("저장소를 사용할 수 없습니다. 오류를 확인한 뒤 새로고침해 주세요.", true);
+          return;
+        }
+        const name = deckNameInput.value.trim();
+        const normalizedName = name.toLocaleLowerCase("ko-KR");
+        const validationMessage = getSaveValidationMessage(name, normalizedName);
+        if (validationMessage) {
+          updateSaveButton();
+          setStatus(validationMessage, true);
+          if (!name) deckNameInput.focus();
+          return;
+        }
+        const now = new Date().toISOString();
+        const existing = editingDeckId ? storedDecks.find((deck) => deck.id === editingDeckId) : null;
+        const deckId = editingDeckId || makeId("deck");
+        const cards = currentCards.map((card, index) => ({
+          id: card.id || makeId("card"),
+          deckId,
+          front: card.front.trim(),
+          partOfSpeech: card.partOfSpeech.trim(),
+          meanings: card.meanings.map((meaning) => ({
+            partOfSpeech: String(meaning.partOfSpeech || "").trim(),
+            text: meaning.text.trim(),
+            synonyms: meaning.synonyms.map((synonym) => synonym.trim()).filter(Boolean)
+          })).filter((meaning) => meaning.text),
+          audioUrl: card.audioUrl || "",
+          favorite: Boolean(card.favorite),
+          order: index
+        })).filter((card) => card.front);
+        if (!cards.length) {
+          setStatus("저장할 표제어가 없습니다. 표제어 입력을 확인해 주세요.", true);
+          return;
+        }
+        const deck = {
+          id: deckId,
+          name,
+          normalizedName,
+          cards,
+          createdAt: existing ? existing.createdAt : now,
+          updatedAt: now
+        };
+        saveDeckButton.disabled = true;
+        try {
+          await putDeck(deck);
+          editingDeckId = null;
+          cancelEditButton.hidden = true;
+          currentCards = cards.map((card) => ({
+            ...card,
+            reviewReasons: [],
+            reviewDone: true,
+            audioStatus: card.audioUrl ? "매칭됨" : "오디오 없음"
+          }));
+          await refreshDecks();
+          renderCards(currentCards);
+          updateSaveButton();
+          setStatus(`"${name}" 자료와 ${cards.length}개 카드를 저장했습니다. 새로고침 후에도 유지됩니다.`);
+          showView("decks");
+        } catch (error) {
+          setStatus(`자료를 저장하지 못했습니다. ${errorMessage(error)}`, true);
+        } finally {
+          updateSaveButton();
+        }
+      }
+
+      function cancelDeckEdit() {
+        if (!window.confirm("수정 중인 내용은 저장되지 않습니다. 편집을 취소할까요?")) return;
+        editingDeckId = null;
+        currentCards = [];
+        deckNameInput.value = "";
+        pdfFileInput.value = "";
+        htmlFileInput.value = "";
+        htmlAudioEntries = [];
+        cancelEditButton.hidden = true;
+        resetResults();
+        updateSaveButton();
+        setStatus("자료 수정을 취소했습니다. 저장된 원본은 변경되지 않았습니다.");
+      }
+
+      function updateSaveButton() {
+        const name = deckNameInput.value.trim();
+        const validationMessage = getSaveValidationMessage(name, name.toLocaleLowerCase("ko-KR"));
+        saveDeckButton.disabled = Boolean(validationMessage);
+        saveDeckButton.textContent = editingDeckId ? "자료 수정 저장" : "검토한 자료 저장";
+        saveValidation.textContent = validationMessage || "저장할 자료와 카드가 준비되었습니다.";
+        const extractionBlocksSave = pdfExtractionFailed && !currentCards.length &&
+          validationMessage === "저장할 카드가 없습니다. PDF 텍스트 추출을 먼저 실행해 주세요.";
+        saveValidation.hidden = extractionBlocksSave;
+        saveValidation.classList.toggle("error", Boolean(validationMessage) && !extractionBlocksSave);
+      }
+
+      function getSaveValidationMessage(name, normalizedName) {
+        if (!db) return "저장소를 준비하지 못했습니다. 오류 상태를 확인한 뒤 페이지를 새로고침해 주세요.";
+        if (!name) return "자료명을 입력하면 저장할 수 있습니다.";
+        if (storedDecks.some((deck) =>
+          deck.normalizedName === normalizedName && deck.id !== editingDeckId
+        )) return "같은 자료명이 이미 있습니다. 기존 자료를 수정하거나 다른 이름을 사용해 주세요.";
+        if (!currentCards.length) return "저장할 카드가 없습니다. PDF 텍스트 추출을 먼저 실행해 주세요.";
+        const unreviewedCard = currentCards.find((card) =>
+          card.reviewReasons.length && !card.reviewDone
+        );
+        if (unreviewedCard) return `"${unreviewedCard.front}" 카드의 검토 필요 항목을 확인하고 '검토 완료'를 체크해 주세요.`;
+        const invalidAudioCard = currentCards.find((card) => card.audioInputInvalid);
+        if (invalidAudioCard) return `"${invalidAudioCard.front}" 카드의 오디오 URL을 확인해 주세요. 오디오는 비워 둘 수 있습니다.`;
+        const incompleteCard = currentCards.find((card) =>
+          !card.front.trim() ||
+          !card.meanings.some((meaning) => meaning.text.trim())
+        );
+        if (incompleteCard) {
+          const field = !incompleteCard.front.trim() ? "표제어" :
+            "한국어 뜻";
+          return `모든 카드에 ${field}를 입력해 주세요. 품사, 유사어, 오디오 URL은 비워 둘 수 있습니다.`;
+        }
+        return "";
+      }
+
+      function updateCardField(event) {
+        const input = event.target.closest("[data-card-index][data-field]");
+        if (!input) return;
+        const card = currentCards[Number(input.dataset.cardIndex)];
+        if (!card) return;
+        const field = input.dataset.field;
+        if (field === "front") card.front = input.value;
+        else if (field === "audioUrl") {
+          card.audioUrl = safeAudioUrl(input.value);
+          card.audioInputInvalid = Boolean(input.value.trim() && !card.audioUrl);
+          card.audioStatus = card.audioUrl
+            ? (card.audioUrl === input.value.trim() ? "수동 입력" : "URL 확인 필요")
+            : input.value.trim() ? "유효하지 않은 URL" : "오디오 없음";
+          updateReviewAudioButton(card, Number(input.dataset.cardIndex));
+        } else if (field === "partOfSpeech") {
+          const meaning = card.meanings[Number(input.dataset.meaningIndex)];
+          if (meaning) meaning.partOfSpeech = input.value;
+        } else if (field === "meaning") {
+          const meaning = card.meanings[Number(input.dataset.meaningIndex)];
+          if (meaning) meaning.text = input.value;
+        } else if (field === "synonyms") {
+          const meaning = card.meanings[Number(input.dataset.meaningIndex)];
+          if (meaning) {
+            meaning.synonyms = input.value.split(",").map((item) => item.trim()).filter(Boolean);
+          }
+        }
+        updateSaveButton();
+      }
+
+      function updateCardReviewState(event) {
+        const checkbox = event.target.closest("[data-review-index]");
+        if (!checkbox) return;
+        const card = currentCards[Number(checkbox.dataset.reviewIndex)];
+        if (!card) return;
+        card.reviewDone = checkbox.checked;
+        updateSaveButton();
+        const badge = checkbox.closest(".card-preview").querySelector(".review-badge");
+        if (badge) badge.textContent = checkbox.checked ? "검토 완료" : "검토 필요";
+        checkbox.closest(".card-preview").classList.toggle("needs-review", !checkbox.checked);
+      }
+
+      function addManualCard() {
+        const card = {
+          id: makeId("card"),
+          front: "",
+          partOfSpeech: "",
+          meanings: [{ partOfSpeech: "", text: "", synonyms: [], hasEquals: false }],
+          reviewReasons: [],
+          reviewDone: true,
+          audioUrl: "",
+          audioStatus: "오디오 없음",
+          favorite: false
+        };
+        currentCards.push(card);
+        renderCards(currentCards);
+        updateSaveButton();
+        const input = cardPreview.querySelector(`[data-card-index="${currentCards.length - 1}"][data-field="front"]`);
+        input?.focus();
+        input?.scrollIntoView({ behavior: "smooth", block: "center" });
+      }
+
+      function handlePreviewChange(event) {
+        updateCardReviewState(event);
+        const input = event.target.closest('[data-field="front"]');
+        if (input && htmlAudioEntries.length) matchAudioToCards();
+      }
+
+      async function handlePreviewClick(event) {
+        const button = event.target.closest("button[data-action]");
+        if (!button) return;
+        const cardIndex = Number(button.dataset.cardIndex);
+        const meaningIndex = Number(button.dataset.meaningIndex);
+        const card = currentCards[cardIndex];
+        if (!card) return;
+        if (button.dataset.action === "play-review-audio") {
+          await playReviewAudio(card, button);
+          return;
+        }
+        if (button.dataset.action === "remove-card") {
+          if (!window.confirm(`"${card.front}" 카드를 추출 결과에서 삭제할까요?`)) return;
+          currentCards.splice(cardIndex, 1);
+          renderCards(currentCards);
+          updateSaveButton();
+          return;
+        }
+        if (button.dataset.action === "add-meaning") {
+          card.meanings.push({
+            partOfSpeech: "",
+            text: "",
+            synonyms: [],
+            hasEquals: false
+          });
+        } else if (button.dataset.action === "remove-meaning" && card.meanings.length > 1) {
+          card.meanings.splice(meaningIndex, 1);
+        }
+        renderCards(currentCards);
+        updateSaveButton();
+      }
+
+      async function loadPdf() {
+        if (editingDeckId) {
+          pdfFileInput.value = "";
+          setStatus("저장된 자료를 수정 중입니다. 이 자료를 보존하려면 수정 취소 후 PDF를 업로드해 주세요.", true);
+          return;
+        }
+        resetResults();
+        currentCards = [];
+        pdfExtractionFailed = false;
+        updateSaveButton();
+        pdfDocument = null;
+        renderedCanvas = null;
+        pageNumberInput.disabled = true;
+        renderButton.disabled = true;
+        extractTextButton.disabled = true;
+        const file = pdfFileInput.files && pdfFileInput.files[0];
+        if (!file) {
+          setStatus("PDF 파일을 선택해 주세요.");
+          return;
+        }
+        if (!/\.pdf$/i.test(file.name) ||
+            (file.type && file.type !== "application/pdf" && file.type !== "application/octet-stream")) {
+          setStatus("지원하지 않는 파일입니다. PDF 파일을 선택해 주세요.", true);
+          return;
+        }
+        setBusy(true);
+        let loadingTask = null;
+        let loadTimeout = null;
+        let documentReady = false;
+        try {
+          setStatus("PDF 파서를 불러오는 중입니다.");
+          await ensurePdfParserLoaded();
+          const data = await file.arrayBuffer();
+          loadingTask = pdfjs.getDocument({ data });
+          pdfDocument = await Promise.race([
+            loadingTask.promise,
+            new Promise((_, reject) => {
+              loadTimeout = window.setTimeout(() => {
+                reject(new Error("PDF 해석 시간이 초과되었습니다. 파일을 다시 저장하거나 용량을 줄인 뒤 재시도해 주세요."));
+              }, 60000);
+            })
+          ]);
+          window.clearTimeout(loadTimeout);
+          loadTimeout = null;
+          if (!Number.isInteger(pdfDocument.numPages) || pdfDocument.numPages < 1) {
+            throw new Error("PDF에 읽을 수 있는 페이지가 없습니다.");
+          }
+          documentReady = true;
+          pageNumberInput.max = String(pdfDocument.numPages);
+          pageNumberInput.value = "1";
+          pageNumberInput.disabled = false;
+          renderButton.disabled = false;
+          setStatus(`PDF를 열었습니다. 총 ${pdfDocument.numPages}페이지입니다. 페이지를 미리 본 뒤 전체 텍스트를 추출할 수 있습니다.`);
+          setBusy(false);
+          await renderSelectedPage();
+        } catch (error) {
+          if (loadTimeout !== null) window.clearTimeout(loadTimeout);
+          if (loadingTask && !documentReady) {
+            try {
+              await loadingTask.destroy();
+            } catch (destroyError) {
+              console.error("PDF 로딩 작업을 정리하지 못했습니다.", destroyError);
+            }
+          }
+          if (!documentReady) pdfDocument = null;
+          const detail = error?.name === "PasswordException"
+            ? "암호로 보호된 PDF는 지원하지 않습니다. 암호 보호를 해제한 뒤 다시 선택해 주세요."
+            : `파일이 손상되었거나 지원되지 않을 수 있습니다. ${errorMessage(error)}`;
+          setStatus(`PDF를 열지 못했습니다. ${detail}`, true);
+        } finally {
+          setBusy(false);
+        }
+      }
+
+      async function renderSelectedPage() {
+        if (!pdfDocument || busy) return;
+        const pageNumber = Number(pageNumberInput.value);
+        if (!Number.isInteger(pageNumber) || pageNumber < 1 || pageNumber > pdfDocument.numPages) {
+          setStatus(`페이지 번호는 1부터 ${pdfDocument.numPages} 사이로 입력해 주세요.`, true);
+          return;
+        }
+        setBusy(true);
+        setStatus(`${pageNumber}페이지를 렌더링하는 중입니다...`);
+        try {
+          const canvas = await renderPdfPage(pageNumber);
+          pageFrame.replaceChildren(canvas);
+          renderedCanvas = canvas;
+          setStatus(`${pageNumber}페이지 미리보기가 준비되었습니다. 텍스트 추출 시 전체 ${pdfDocument.numPages}페이지를 처리합니다.`);
+        } catch (error) {
+          renderedCanvas = null;
+          pageFrame.replaceChildren(makeEmpty("페이지를 렌더링하지 못했습니다."));
+          setStatus(`페이지 렌더링에 실패했습니다. ${errorMessage(error)}`, true);
+        } finally {
+          setBusy(false);
+        }
+      }
+
+      async function renderPdfPage(pageNumber) {
+        const page = await pdfDocument.getPage(pageNumber);
+        const viewport = page.getViewport({ scale: 2.4 });
+        const canvas = document.createElement("canvas");
+        const context = canvas.getContext("2d");
+        if (!context) throw new Error("Canvas를 사용할 수 없습니다.");
+        canvas.width = Math.ceil(viewport.width);
+        canvas.height = Math.ceil(viewport.height);
+        await page.render({ canvasContext: context, viewport }).promise;
+        return canvas;
+      }
+
+      async function extractPdfText() {
+        if (!pdfDocument || busy) return;
+        setBusy(true);
+        extractTextButton.disabled = true;
+        currentCards = [];
+        pdfExtractionFailed = true;
+        updateSaveButton();
+        output.textContent = "PDF 내부 텍스트를 추출하고 있습니다...";
+        cardPreview.replaceChildren(makeEmpty("텍스트 레이어를 읽는 중입니다."));
+        summary.textContent = `${pdfDocument.numPages}페이지의 텍스트를 순서대로 읽는 중입니다.`;
+        setStatus(`${pdfDocument.numPages}페이지에서 내장 텍스트를 추출하는 중입니다.`);
+        const extractedCards = [];
+        const pageTexts = [];
+        const failures = [];
+        const imageOnlyPages = [];
+        let ocrWorker = null;
+        let koreanOcrWorker = null;
+        let totalCharacters = 0;
+        const getKoreanOcrWorker = async () => {
+          if (!koreanOcrWorker) koreanOcrWorker = await createKoreanOcrWorker();
+          return koreanOcrWorker;
+        };
+
+        try {
+          for (let pageNumber = 1; pageNumber <= pdfDocument.numPages; pageNumber++) {
+            setStatus(`${pageNumber}/${pdfDocument.numPages}페이지 텍스트를 처리하고 있습니다.`);
+            let page = null;
+            try {
+              page = await pdfDocument.getPage(pageNumber);
+              const textContent = await page.getTextContent();
+              let pageData = extractPageLayout(page, textContent);
+              let pageText = normalizePdfText(pageData.text);
+              if (!pageText) {
+                const operatorList = await page.getOperatorList();
+                const imageOperators = [
+                  pdfjs.OPS.paintImageXObject,
+                  pdfjs.OPS.paintInlineImageXObject,
+                  pdfjs.OPS.paintImageMaskXObject,
+                  pdfjs.OPS.paintJpegXObject
+                ].filter(Number.isInteger);
+                if (operatorList.fnArray.some((operator) => imageOperators.includes(operator))) {
+                  imageOnlyPages.push(pageNumber);
+                  ocrWorker ||= await createPdfOcrWorker();
+                  const ocrResult = await recognizePdfPage(page, pageNumber, ocrWorker, getKoreanOcrWorker);
+                  pageData = ocrResult.layout;
+                  pageText = normalizePdfText(ocrResult.text);
+                }
+              }
+              totalCharacters += pageText.replace(/\s/g, "").length;
+              pageTexts.push(`--- ${pageNumber}페이지 ---\n${pageText || (imageOnlyPages.includes(pageNumber)
+                ? "OCR에서도 텍스트를 찾지 못했습니다."
+                : "이 페이지에서 텍스트를 찾지 못했습니다.")}`);
+              const pageCards = imageOnlyPages.includes(pageNumber)
+                ? extractCardsFromOcrLayout(pageData)
+                : extractCardsFromTextLayout(pageData);
+              extractedCards.push(...pageCards.map((card) => ({
+                ...card,
+                id: makeId("card"),
+                pageNumber,
+                audioUrl: "",
+                audioStatus: "No audio",
+                favorite: false,
+                reviewDone: !card.reviewReasons.length
+              })));
+            } catch (error) {
+              failures.push({ pageNumber, reason: errorMessage(error) });
+              pageTexts.push(`--- ${pageNumber}페이지 ---\n텍스트를 읽지 못했습니다: ${errorMessage(error)}`);
+            } finally {
+              page?.cleanup();
+            }
+            await new Promise((resolve) => window.setTimeout(resolve, 0));
+          }
+
+          output.textContent = pageTexts.join("\n\n") || "텍스트를 추출하지 못했습니다.";
+          if (totalCharacters < 20) {
+            currentCards = [];
+            cardPreview.replaceChildren(makeEmpty("선택 가능한 텍스트를 찾지 못했습니다."));
+            const failureDetails = failures.map((failure) => `${failure.pageNumber}페이지: ${failure.reason}`).join(" / ");
+            summary.textContent = `텍스트 문자 수: ${totalCharacters}; 단어장 후보: ${extractedCards.length}` +
+              (failures.length ? `; 실패 페이지: ${failures.length}개 (${failureDetails})` : "");
+            setStatus(failures.length
+              ? `일부 페이지의 텍스트를 읽지 못했습니다: ${failureDetails}`
+              : imageOnlyPages.length
+                ? `${imageOnlyPages.join(", ")}페이지에서 OCR로도 텍스트를 추출하지 못했습니다. 더 선명한 PDF인지 확인해 주세요.`
+                : "내장 텍스트가 없거나 추출량이 너무 적습니다. 선택·복사할 수 있는 텍스트 기반 PDF인지 확인해 주세요. OCR로 대체하지 않습니다.", true);
+            updateSaveButton();
+            return;
+          }
+
+          currentCards = extractedCards;
+          pdfExtractionFailed = !currentCards.length;
+          if (currentCards.length) matchAudioToCards();
+          else cardPreview.replaceChildren(makeEmpty("텍스트는 추출했지만 단어장 구조를 찾지 못했습니다. 아래 전체 텍스트를 확인해 주세요."));
+
+          const reviewCount = currentCards.filter((card) => card.reviewReasons.length).length;
+          const failureDetails = failures.map((failure) => `${failure.pageNumber}페이지: ${failure.reason}`).join(" / ");
+          summary.textContent = `페이지: ${pdfDocument.numPages}; 텍스트 문자 수: ${totalCharacters}; 카드: ${currentCards.length}; 검토 필요: ${reviewCount}` +
+            (failures.length ? `; 실패 페이지: ${failures.length}개 (${failureDetails})` : "");
+          if (failures.length) {
+            setStatus(`${pdfDocument.numPages - failures.length}/${pdfDocument.numPages}페이지를 추출했습니다. 실패한 페이지: ${failureDetails}`, true);
+          } else if (currentCards.length) {
+            setStatus("PDF 내장 텍스트 추출이 완료되었습니다. 저장 전에 표제어, 뜻, 품사를 확인해 주세요.");
+          } else {
+            setStatus("PDF 텍스트 추출은 완료됐지만 카드 구조를 찾지 못했습니다. 전체 텍스트를 확인해 주세요.", true);
+          }
+          updateSaveButton();
+        } catch (error) {
+          output.textContent = "PDF 텍스트 추출에 실패했습니다.";
+          currentCards = [];
+          pdfExtractionFailed = true;
+          cardPreview.replaceChildren(makeEmpty("PDF 텍스트 추출에 실패했습니다."));
+          summary.textContent = "PDF 텍스트 추출에 실패했습니다.";
+          setStatus(`PDF 텍스트 추출에 실패했습니다. ${errorMessage(error)}`, true);
+          updateSaveButton();
+        } finally {
+          if (ocrWorker) await ocrWorker.terminate();
+          if (koreanOcrWorker) await koreanOcrWorker.terminate();
+          setBusy(false);
+          extractTextButton.disabled = !pdfDocument;
+        }
+      }
+
+      async function createPdfOcrWorker() {
+        await ensureTesseractLoaded();
+        setStatus("이미지 페이지를 읽기 위해 영어·한국어 OCR 엔진을 준비하고 있습니다.");
+        return window.Tesseract.createWorker("eng+kor", 1, {
+          logger: ({ status, progress }) => {
+            if (status === "recognizing text") {
+              setStatus(`이미지 페이지 OCR 중입니다 (${Math.round(progress * 100)}%).`);
+            } else if (status === "loading language traineddata") {
+              setStatus(`영어·한국어 OCR 데이터를 불러오는 중입니다 (${Math.round(progress * 100)}%).`);
+            }
+          }
+        });
+      }
+
+      async function createKoreanOcrWorker() {
+        setStatus("품사 배지의 한국어 글자를 확인하기 위해 OCR을 준비하고 있습니다.");
+        return window.Tesseract.createWorker("kor", 1, {
+          logger: ({ status, progress }) => {
+            if (status === "loading language traineddata") {
+              setStatus(`한국어 OCR 데이터를 불러오는 중입니다 (${Math.round(progress * 100)}%).`);
+            }
+          }
+        });
+      }
+
+      async function recognizePdfPage(page, pageNumber, worker, getKoreanWorker) {
+        const scale = 3;
+        const viewport = page.getViewport({ scale });
+        const canvas = document.createElement("canvas");
+        const context = canvas.getContext("2d");
+        if (!context) throw new Error("OCR을 위한 Canvas를 사용할 수 없습니다.");
+        canvas.width = Math.ceil(viewport.width);
+        canvas.height = Math.ceil(viewport.height);
+        setStatus(`${pageNumber}페이지 이미지에서 영어·한국어를 인식하는 중입니다.`);
+        await page.render({ canvasContext: context, viewport }).promise;
+        await worker.setParameters({ tessedit_pageseg_mode: 3 });
+        const { data } = await worker.recognize(canvas);
+        const lines = (data.blocks || []).flatMap((block) =>
+          block.paragraphs.flatMap((paragraph) => paragraph.lines.map((line) => ({
+            text: line.text.trim(),
+            x: line.bbox.x0 / scale,
+            y: (line.bbox.y0 + line.bbox.y1) / (2 * scale),
+            right: line.bbox.x1 / scale,
+            fontSize: Math.max(1, (line.bbox.y1 - line.bbox.y0) / scale),
+            confidence: line.confidence,
+            words: (line.words || []).map((word) => ({
+              text: word.text.trim(),
+              bbox: {
+                x0: word.bbox.x0 / scale,
+                y0: word.bbox.y0 / scale,
+                x1: word.bbox.x1 / scale,
+                y1: word.bbox.y1 / scale
+              }
+            }))
+          })))
+        ).filter((line) => line.text);
+        for (const line of lines) {
+          const headword = line.text.match(/^\s*([A-Za-z][A-Za-z'-]{2,})\b/);
+          if (!headword || !/[\uAC00-\uD7AF]/.test(line.text) || line.x > viewport.width / scale * 0.25) continue;
+          line.partOfSpeech = await recognizeOcrPartOfSpeech(line, canvas, scale, worker, getKoreanWorker);
+        }
+        canvas.width = 0;
+        canvas.height = 0;
+        const pageSize = page.getViewport({ scale: 1 });
+        return {
+          text: data.text,
+          layout: {
+            pageWidth: pageSize.width,
+            pageHeight: pageSize.height,
+            lines,
+            text: lines.map((line) => line.text).join("\n")
+          }
+        };
+      }
+
+      async function recognizeOcrPartOfSpeech(line, canvas, scale, worker, getKoreanWorker) {
+        const headword = line.text.match(/^\s*([A-Za-z][A-Za-z'-]{2,})\b/)?.[1].toLowerCase();
+        const head = line.words.find((word) => word.text.toLowerCase() === headword);
+        if (!head) return "";
+        const number = line.words.find((word) =>
+          word.bbox.x0 >= head.bbox.x1 && /^\d{1,2}[.)]?$/.test(word.text));
+        const firstMeaningX = number?.bbox.x0 ?? head.bbox.x1 + 150 / scale;
+        const marker = line.words
+          .filter((word) => word.bbox.x0 >= head.bbox.x1 && word.bbox.x0 < firstMeaningX)
+          .find((word) => /^[A-Z0-9|=]+$/.test(word.text) || /^[\uAC00-\uD7AF]+$/.test(word.text));
+        let badge = marker?.bbox;
+        if (!badge && number) {
+          badge = {
+            x0: number.bbox.x0 - 34 / scale,
+            x1: number.bbox.x0 - 3 / scale,
+            y0: number.bbox.y0 - 2 / scale,
+            y1: number.bbox.y1 + 2 / scale
+          };
+        }
+        if (!badge) return "";
+
+        const recognizeCrop = async (ocrWorker, padding) => {
+          const x0 = Math.max(0, Math.floor(badge.x0 * scale) - padding);
+          const y0 = Math.max(0, Math.floor(badge.y0 * scale) - padding);
+          const x1 = Math.min(canvas.width, Math.ceil(badge.x1 * scale) + padding);
+          const y1 = Math.min(canvas.height, Math.ceil(badge.y1 * scale) + padding);
+          const crop = document.createElement("canvas");
+          const cropScale = 10;
+          crop.width = (x1 - x0) * cropScale;
+          crop.height = (y1 - y0) * cropScale;
+          const context = crop.getContext("2d");
+          if (!context) throw new Error("품사 OCR을 위한 Canvas를 사용할 수 없습니다.");
+          context.imageSmoothingEnabled = false;
+          context.drawImage(canvas, x0, y0, x1 - x0, y1 - y0, 0, 0, crop.width, crop.height);
+          await ocrWorker.setParameters({ tessedit_pageseg_mode: 10 });
+          const result = await ocrWorker.recognize(crop);
+          crop.width = 0;
+          crop.height = 0;
+          return normalizeOcrPartOfSpeech(result.data.text);
+        };
+
+        const primaryResults = [];
+        for (const padding of [3, 5, 8]) {
+          primaryResults.push(await recognizeCrop(worker, padding));
+        }
+        const primaryValue = mostFrequentPartOfSpeech(primaryResults);
+        if (primaryValue) return primaryValue;
+
+        const koreanWorker = await getKoreanWorker();
+        const koreanResults = [];
+        for (const padding of [3, 5, 8]) {
+          koreanResults.push(await recognizeCrop(koreanWorker, padding));
+        }
+        return mostFrequentPartOfSpeech(koreanResults);
+      }
+
+      function normalizeOcrPartOfSpeech(value) {
+        const text = String(value || "").trim().replace(/[|]/g, "").replace(/[\[\]{}().,:]/g, "");
+        const parsed = parsePartOfSpeech(text);
+        if (parsed) return parsed;
+        if (/^(?:멈|명|명사)$/u.test(text)) return "명";
+        if (/^(?:팀|=|I=|=I)$/i.test(text)) return "동";
+        if (/^형$/u.test(text)) return "형";
+        return "";
+      }
+
+      function mostFrequentPartOfSpeech(values) {
+        const counts = new Map();
+        for (const value of values.filter(Boolean)) counts.set(value, (counts.get(value) || 0) + 1);
+        const ranked = [...counts.entries()].sort((first, second) => second[1] - first[1]);
+        return ranked.length && (ranked.length === 1 || ranked[0][1] > ranked[1][1])
+          ? ranked[0][0]
+          : "";
+      }
+
+      function extractCardsFromOcrLayout(pageData) {
+        const { lines, pageWidth, pageHeight } = pageData;
+        const cards = [];
+        const seen = new Set();
+        for (const line of lines) {
+          if (line.x > pageWidth * 0.25 || line.y < pageHeight * 0.05 || line.y > pageHeight * 0.96) continue;
+          const match = line.text.match(/^\s*([A-Za-z][A-Za-z'-]{2,})\b/);
+          if (!match || !/[\uAC00-\uD7AF]/.test(line.text)) continue;
+          const front = match[1];
+          const key = front.toLowerCase();
+          if (seen.has(key)) continue;
+          seen.add(key);
+          const meanings = parseOcrMeanings(line.text.slice(match[0].length));
+          const confidence = Number(line.confidence);
+          const reviewReasons = ["OCR로 인식한 표제어와 뜻을 원문 PDF와 대조해 확인해 주세요."];
+          if (!line.partOfSpeech) {
+            reviewReasons.push("OCR에서 품사를 읽지 못했습니다. 원문 PDF를 확인해 입력해 주세요.");
+          }
+          if (Number.isFinite(confidence) && confidence < 80) {
+            reviewReasons.push(`OCR 인식 신뢰도가 낮습니다 (${Math.round(confidence)}%).`);
+          }
+          cards.push({
+            front,
+            partOfSpeech: line.partOfSpeech || "",
+            meanings: meanings.map((meaning) => ({
+              ...meaning,
+              partOfSpeech: line.partOfSpeech || "",
+              synonyms: meaning.synonyms,
+              confidence: Number.isFinite(confidence) ? confidence : 0,
+              textConfidence: Number.isFinite(confidence) ? confidence : 0,
+              hasEquals: meaning.synonyms.length > 0
+            })),
+            reviewReasons,
+            reviewDone: false
+          });
+        }
+        return cards;
+      }
+
+      function parseOcrMeanings(lineText) {
+        const text = normalizePdfText(lineText);
+        const numberedSenses = [...text.matchAll(/(?:^|\s)(\d{1,2})[.)]\s*/g)];
+        const segments = numberedSenses.length
+          ? numberedSenses.map((match, index) => ({
+              number: Number(match[1]),
+              text: text.slice(match.index + match[0].length, numberedSenses[index + 1]?.index ?? text.length)
+            }))
+          : [{ number: 1, text }];
+        return segments.flatMap((segment) => {
+          const firstKorean = segment.text.search(/[\uAC00-\uD7AF]/);
+          if (firstKorean < 0) return [];
+          const koreanAndMarkers = segment.text.slice(firstKorean);
+          const marker = koreanAndMarkers.match(/©|(?:^|\s)[O0](?=[A-Za-z])/);
+          const meaningText = marker
+            ? koreanAndMarkers.slice(0, marker.index)
+            : koreanAndMarkers.replace(/\s+[A-Za-z][A-Za-z'-]*(?:,\s*[A-Za-z][A-Za-z'-]*)*.*$/, "");
+          const text = normalizeOcrKoreanSpacing(meaningText.replace(/[【】[\]]/g, ""));
+          const synonymText = marker
+            ? koreanAndMarkers.slice(marker.index + marker[0].length).replace(/[©©].*$/, "").replace(/=.*/, "")
+            : "";
+          const synonyms = synonymText.split(",").map((word) => word.trim())
+            .filter((word) => /^[A-Za-z][A-Za-z'-]*(?:\s+[A-Za-z][A-Za-z'-]*)*$/.test(word));
+          return text ? [{ text, synonyms, senseNumber: segment.number }] : [];
+        });
+      }
+
+      function normalizeOcrKoreanSpacing(value) {
+        const tokens = normalizePdfText(value).split(/\s+/).filter(Boolean);
+        const isSingleHangul = (token) => /^[\uAC00-\uD7AF]$/.test(token.replace(/[,.;!?]+$/, ""));
+        const normalized = [];
+        for (const token of tokens) {
+          const previous = normalized[normalized.length - 1];
+          const isPunctuatedSingleHangul = /^[\uAC00-\uD7AF][,.;!?]+$/.test(token);
+          if (previous && (
+            (isSingleHangul(previous) && /^[\uAC00-\uD7AF]/.test(token)) ||
+            (isPunctuatedSingleHangul && /[\uAC00-\uD7AF]$/.test(previous))
+          )) {
+            normalized[normalized.length - 1] = previous + token;
+          } else {
+            normalized.push(token);
+          }
+        }
+        return normalized.join(" ")
+          .replace(/([\uAC00-\uD7AF]{1,8})\s+(하다|되다|이다|하며|하는|한다|한|하게|하여|하고|했다|합니다|하기|해서)(?=\s|[,.;!?]|$)/g,
+            (match, stem, ending) => stem === "나란히" ? match : stem + ending)
+          .replace(/\s+([,.;!?])/g, "$1")
+          .replace(/([,.;!?])(?=\S)/g, "$1 ");
+      }
+
+      function extractPageLayout(page, textContent) {
+        const viewport = page.getViewport({ scale: 1 });
+        const pageWidth = viewport.width;
+        const pageHeight = viewport.height;
+        const items = textContent.items
+          .filter((item) => typeof item.str === "string" && item.str.trim() &&
+            Array.isArray(item.transform) && item.transform.length >= 6 &&
+            item.transform.slice(0, 6).every(Number.isFinite))
+          .map((item) => {
+            const point = viewport.convertToViewportPoint(item.transform[4], item.transform[5]);
+            const fontSize = Math.max(1, Math.hypot(item.transform[2], item.transform[3]));
+            return { text: item.str, x: point[0], y: point[1], width: item.width || 0, fontSize };
+          })
+          .sort((a, b) => a.y - b.y || a.x - b.x);
+        const lines = [];
+        for (const item of items) {
+          let line = lines.find((candidate) =>
+            Math.abs(candidate.y - item.y) <= Math.max(2, Math.min(candidate.fontSize, item.fontSize) * 0.35)
+          );
+          if (!line) {
+            line = { y: item.y, x: item.x, right: item.x + item.width, fontSize: item.fontSize, items: [] };
+            lines.push(line);
+          }
+          line.items.push(item);
+          line.x = Math.min(line.x, item.x);
+          line.right = Math.max(line.right, item.x + item.width);
+          line.fontSize = Math.max(line.fontSize, item.fontSize);
+        }
+        lines.sort((a, b) => a.y - b.y || a.x - b.x);
+        for (const line of lines) {
+          line.items.sort((a, b) => a.x - b.x);
+          let text = "";
+          let previous = null;
+          for (const item of line.items) {
+            const value = item.text.replace(/[\t\r\n]+/g, " ");
+            if (previous && item.x - (previous.x + previous.width) > Math.max(1, item.fontSize * 0.18) &&
+                !/^[,.;:!?)}\]]/.test(value) && !/[\s([{]$/.test(text)) text += " ";
+            text += value;
+            previous = item;
+          }
+          line.text = normalizePdfText(text);
+        }
+        return { pageWidth, pageHeight, lines, text: lines.map((line) => line.text).filter(Boolean).join("\n") };
+      }
+
+      function extractCardsFromTextLayout(pageData) {
+        const { lines, pageWidth, pageHeight } = pageData;
+        const candidates = lines.filter((line) => line.x <= pageWidth * 0.24 &&
+          line.y >= pageHeight * 0.04 && line.y <= pageHeight * 0.96 &&
+          /^[A-Za-z]+(?:[-'][A-Za-z]+)?$/.test(line.text));
+        const cards = [];
+        const usedRows = new Set();
+        for (const candidate of candidates) {
+          const meaningRows = lines.filter((line) => line.x >= pageWidth * 0.27 &&
+            Math.abs(line.y - candidate.y) <= Math.max(candidate.fontSize * 0.8, pageHeight * 0.008) &&
+            /[\uAC00-\uD7AF]/.test(line.text));
+          const meanings = meaningRows.flatMap((line) => parseExtractedMeanings(line.text));
+          const previousLine = [...lines]
+            .filter((line) => line.y < candidate.y && line.x <= pageWidth * 0.27 &&
+              candidate.y - line.y <= pageHeight * 0.045)
+            .sort((a, b) => b.y - a.y)[0];
+          const partOfSpeech = previousLine ? parsePartOfSpeech(previousLine.text) : "";
+          const reviewReasons = meanings.length ? [] : ["No meaning found on the same row; add the meaning manually."];
+          const rowKey = candidate.text.toLowerCase() + ":" + Math.round(candidate.y);
+          if (usedRows.has(rowKey)) continue;
+          usedRows.add(rowKey);
+          cards.push({
+            id: makeId("card"), front: candidate.text, partOfSpeech,
+            meanings: meanings.map((meaning) => ({ ...meaning, partOfSpeech, hasEquals: meaning.synonyms.length > 0 })),
+            reviewReasons, reviewDone: reviewReasons.length === 0,
+            audioUrl: "", audioStatus: "No audio", favorite: false
+          });
+        }
+        return cards;
+      }
+
+      function parseExtractedMeanings(lineText) {
+        const text = normalizePdfText(lineText);
+        if (!/[\uAC00-\uD7AF]/.test(text)) return [];
+        const starts = [...text.matchAll(/(?:^|\s)(\d{1,2})[.)]\s*/g)];
+        const segments = starts.length
+          ? starts.map((match, index) => ({
+              number: Number(match[1]),
+              text: text.slice(match.index + match[0].length, starts[index + 1]?.index ?? text.length).trim()
+            }))
+          : [{ number: 1, text }];
+        return segments.flatMap((segment) => {
+          if (!/[\uAC00-\uD7AF]/.test(segment.text)) return [];
+          const equalsIndex = segment.text.indexOf("=");
+          const meaningText = (equalsIndex < 0 ? segment.text : segment.text.slice(0, equalsIndex)).trim();
+          const synonymText = equalsIndex < 0 ? "" : segment.text.slice(equalsIndex + 1).trim();
+          const synonyms = synonymText && /^[A-Za-z][A-Za-z ,'-]*$/.test(synonymText)
+            ? synonymText.split(",").map((word) => word.trim()).filter(Boolean) : [];
+          return meaningText ? [{ text: meaningText, synonyms, senseNumber: segment.number }] : [];
+        });
+      }
+
+      function parsePartOfSpeech(lineText) {
+        const normalized = String(lineText || "").trim().toLowerCase().replace(/[()[\]{}.,:]/g, " ");
+        const patterns = [
+          { pattern: /(^|\s)(명|명사|n|noun)(\s|$)/, value: "명" },
+          { pattern: /(^|\s)(동|동사|v|verb)(\s|$)/, value: "동" },
+          { pattern: /(^|\s)(형|형용사|adj|adjective)(\s|$)/, value: "형" },
+          { pattern: /(^|\s)(부|부사|adv|adverb)(\s|$)/, value: "부" },
+          { pattern: /(^|\s)(전|전치사|prep|preposition)(\s|$)/, value: "전" },
+          { pattern: /(^|\s)(접|접속사|conj|conjunction)(\s|$)/, value: "접" },
+          { pattern: /(^|\s)(대|대명사|pron|pronoun)(\s|$)/, value: "대" },
+          { pattern: /(^|\s)(감|감탄사|interj|interjection)(\s|$)/, value: "감" }
+        ];
+        return patterns.find((part) => part.pattern.test(normalized))?.value || "";
+      }
+
+      function normalizePdfText(value) {
+        return String(value || "").replace(/[\u0000-\u0008\u000B\u000C\u000E-\u001F]/g, "")
+          .replace(/[ \t]+/g, " ").replace(/ *\n */g, "\n").replace(/\n{3,}/g, "\n\n").trim();
+      }
+
+      function renderCards(cards) {
+        if (!cards.length) {
+          cardPreview.replaceChildren(makeEmpty("표제어 후보를 찾지 못했습니다."));
+          return;
+        }
+        const fragment = document.createDocumentFragment();
+        cards.forEach((card, cardIndex) => {
+          const section = document.createElement("section");
+          section.className = `card-preview${card.reviewReasons.length && !card.reviewDone ? " needs-review" : ""}`;
+          if (card.pageNumber) section.dataset.pageNumber = String(card.pageNumber);
+          const heading = document.createElement("h3");
+          heading.className = "card-title";
+          const title = document.createElement("strong");
+          title.textContent = card.front;
+          heading.append(title);
+          if (card.pageNumber) {
+            const pageOrigin = document.createElement("span");
+            pageOrigin.className = "page-origin";
+            pageOrigin.textContent = `${card.pageNumber}페이지`;
+            heading.append(pageOrigin);
+          }
+          if (card.reviewReasons.length) {
+            const badge = document.createElement("span");
+            badge.className = "review-badge";
+            badge.textContent = card.reviewDone ? "검토 완료" : "검토 필요";
+            heading.append(badge);
+          }
+          section.append(heading);
+          const fields = document.createElement("div");
+          fields.className = "card-fields";
+          fields.append(makePreviewField("표제어", card.front, "영어 표제어", {
+            cardIndex, field: "front"
+          }));
+          card.meanings.forEach((meaning, meaningIndex) => {
+            const partOfSpeech = Object.prototype.hasOwnProperty.call(meaning, "partOfSpeech")
+              ? meaning.partOfSpeech
+              : card.partOfSpeech || "";
+            fields.append(makePreviewField(`품사 ${meaningIndex + 1}`, partOfSpeech, "품사 (선택)", {
+              cardIndex, meaningIndex, field: "partOfSpeech"
+            }));
+            fields.append(makePreviewField(`뜻 ${meaningIndex + 1}`, meaning.text, "PDF에서 추출한 뜻을 확인하고 필요하면 수정하세요.", {
+              cardIndex, meaningIndex, field: "meaning"
+            }));
+            fields.append(makePreviewField(`유사어 ${meaningIndex + 1}`, meaning.synonyms.join(", "), meaning.hasEquals ? "PDF의 = 표식 확인" : "쉼표로 구분해 입력", {
+              cardIndex, meaningIndex, field: "synonyms"
+            }));
+            const removeButton = makeActionButton("뜻 삭제", "remove-meaning", card.id, "secondary button-small");
+            removeButton.dataset.cardIndex = String(cardIndex);
+            removeButton.dataset.meaningIndex = String(meaningIndex);
+            fields.append(removeButton);
+          });
+          const audioField = makePreviewField(
+            `오디오 · ${card.audioStatus || "오디오 없음"}`,
+            card.audioUrl || "",
+            "정확히 매칭되는 URL이 없으면 비워 둡니다.",
+            { cardIndex, field: "audioUrl" }
+          );
+          fields.append(audioField);
+          const actions = document.createElement("div");
+          actions.className = "card-actions";
+          const audioButton = makeActionButton(
+            card.audioUrl ? "듣기" : "오디오 없음",
+            "play-review-audio",
+            card.id,
+            "secondary button-small"
+          );
+          audioButton.dataset.cardIndex = String(cardIndex);
+          audioButton.dataset.audioPlayIndex = String(cardIndex);
+          audioButton.disabled = !card.audioUrl;
+          audioButton.title = card.audioUrl ? `오디오 상태: ${card.audioStatus}` : "연결된 오디오가 없습니다.";
+          const addMeaningButton = makeActionButton("뜻 추가", "add-meaning", card.id, "secondary button-small");
+          addMeaningButton.dataset.cardIndex = String(cardIndex);
+          const removeCardButton = makeActionButton("카드 삭제", "remove-card", card.id, "secondary button-small");
+          removeCardButton.dataset.cardIndex = String(cardIndex);
+          actions.append(audioButton, addMeaningButton, removeCardButton);
+          section.append(fields);
+          section.append(actions);
+          if (card.reviewReasons.length) {
+            const reasons = document.createElement("ul");
+            reasons.className = "review-reasons";
+            for (const reason of card.reviewReasons) {
+              const item = document.createElement("li");
+              item.textContent = reason;
+              reasons.append(item);
+            }
+            section.append(reasons);
+            const reviewLabel = document.createElement("label");
+            reviewLabel.className = "preview-field";
+            const reviewText = document.createElement("span");
+            reviewText.textContent = "검토 확인";
+            const checkbox = document.createElement("input");
+            checkbox.type = "checkbox";
+            checkbox.checked = Boolean(card.reviewDone);
+            checkbox.dataset.reviewIndex = String(cardIndex);
+            reviewLabel.append(reviewText, checkbox);
+            section.append(reviewLabel);
+          }
+          fragment.append(section);
+        });
+        cardPreview.replaceChildren(fragment);
+      }
+
+      function makePreviewField(label, value, placeholder, binding) {
+        const wrapper = document.createElement("label");
+        wrapper.className = "preview-field";
+        const labelText = document.createElement("span");
+        labelText.textContent = label;
+        const input = document.createElement("input");
+        input.className = "preview-input";
+        input.type = "text";
+        input.value = value;
+        input.placeholder = placeholder;
+        input.dataset.cardIndex = String(binding.cardIndex);
+        input.dataset.field = binding.field;
+        if (binding.meaningIndex !== undefined) {
+          input.dataset.meaningIndex = String(binding.meaningIndex);
+        }
+        wrapper.append(labelText, input);
+        return wrapper;
+      }
+
+      function updateReviewAudioButton(card, cardIndex) {
+        const button = cardPreview.querySelector(`[data-audio-play-index="${cardIndex}"]`);
+        if (!button) return;
+        button.disabled = !card.audioUrl;
+        button.textContent = card.audioUrl ? "듣기" : card.audioInputInvalid ? "URL 오류" : "오디오 없음";
+        button.title = card.audioInputInvalid
+          ? "오디오 URL이 유효하지 않습니다."
+          : card.audioUrl
+            ? `오디오 상태: ${card.audioStatus}`
+            : "연결된 오디오가 없습니다.";
+      }
+
+      async function playReviewAudio(card, button) {
+        const audioUrl = safeAudioUrl(card.audioUrl);
+        if (!audioUrl) {
+          card.audioStatus = "오디오 없음";
+          button.disabled = true;
+          button.textContent = "오디오 없음";
+          button.title = "연결된 오디오가 없습니다.";
+          return;
+        }
+        if (activeReviewAudio) {
+          activeReviewAudio.audio.pause();
+          activeReviewAudio.audio.currentTime = 0;
+          if (activeReviewAudio.button.isConnected) {
+            activeReviewAudio.button.textContent = "듣기";
+            activeReviewAudio.button.disabled = false;
+          }
+        }
+        const audio = new Audio(audioUrl);
+        activeReviewAudio = { audio, button };
+        button.disabled = true;
+        button.textContent = "재생 중...";
+        card.audioStatus = "재생 중";
+        button.title = "오디오를 재생하는 중입니다.";
+        audio.onended = () => {
+          if (activeReviewAudio?.audio !== audio) return;
+          activeReviewAudio = null;
+          card.audioStatus = "재생 완료";
+          if (button.isConnected) {
+            button.disabled = false;
+            button.textContent = "다시 듣기";
+            button.title = "오디오가 재생되었습니다.";
+          }
+        };
+        audio.onerror = () => {
+          if (activeReviewAudio?.audio !== audio) return;
+          activeReviewAudio = null;
+          card.audioStatus = "재생 실패";
+          if (button.isConnected) {
+            button.disabled = false;
+            button.textContent = "재생 실패";
+            button.title = "오디오를 불러오지 못했습니다. URL 또는 네트워크를 확인해 주세요.";
+          }
+        };
+        try {
+          await audio.play();
+        } catch (error) {
+          if (activeReviewAudio?.audio === audio) activeReviewAudio = null;
+          card.audioStatus = "재생 실패";
+          if (button.isConnected) {
+            button.disabled = false;
+            button.textContent = "재생 실패";
+            button.title = `오디오를 재생하지 못했습니다. ${errorMessage(error)}`;
+          }
+        }
+      }
+
+      function resetResults() {
+        pageFrame.replaceChildren(makeEmpty("PDF의 페이지 미리보기가 여기에 표시됩니다."));
+        summary.textContent = "아직 텍스트를 추출하지 않았습니다.";
+        cardPreview.replaceChildren(makeEmpty("텍스트 추출 후 표제어별 결과가 표시됩니다."));
+        output.textContent = "추출된 텍스트가 여기에 표시됩니다.";
+        saveValidation.hidden = false;
+      }
+
+      function makeEmpty(text) {
+        const element = document.createElement("span");
+        element.className = "empty";
+        element.textContent = text;
+        return element;
+      }
+
+      function setStatus(message, isError = false) {
+        const globalStatus = document.getElementById("app-status");
+        globalStatus.textContent = message;
+        globalStatus.classList.toggle("error", isError);
+        globalStatus.hidden = false;
+      }
+
+      function setBusy(value) {
+        busy = value;
+        pdfFileInput.disabled = value;
+        pageNumberInput.disabled = value || !pdfDocument;
+        renderButton.disabled = value || !pdfDocument;
+        extractTextButton.disabled = value || !pdfDocument;
+      }
+
+      function errorMessage(error) {
+        return error instanceof Error ? error.message : String(error);
+      }
+    })();
+  </script>
+</body>
+</html>

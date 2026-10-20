@@ -1,0 +1,2863 @@
+{
+  "decks": [
+    {
+      "id": "deck-29a64b51-ebd0-4f20-8e6e-8fc95fc84e9f",
+      "name": "DAY 11",
+      "normalizedName": "day 11",
+      "cards": [
+        {
+          "id": "card-f34c28ae-d905-4a7f-a9e4-d4bfa4e2ebae",
+          "deckId": "deck-29a64b51-ebd0-4f20-8e6e-8fc95fc84e9f",
+          "front": "vendor",
+          "partOfSpeech": "명",
+          "meanings": [
+            {
+              "partOfSpeech": "명",
+              "text": "행상인, 노점 상인",
+              "synonyms": [
+                "seller",
+                "merchant"
+              ]
+            },
+            {
+              "partOfSpeech": "",
+              "text": "판매 회사",
+              "synonyms": []
+            }
+          ],
+          "audioUrl": "https://mobile3.classcard.net/uploads/audio/u/ne/en/nevoca25/NEVOCA_S2_A_DAY11_vendor.mp3",
+          "favorite": false,
+          "order": 0
+        },
+        {
+          "id": "card-d34ea765-9322-46b8-9d50-f5ab81dd5d9f",
+          "deckId": "deck-29a64b51-ebd0-4f20-8e6e-8fc95fc84e9f",
+          "front": "align",
+          "partOfSpeech": "동",
+          "meanings": [
+            {
+              "partOfSpeech": "동",
+              "text": "정렬하다, 나란히 하다",
+              "synonyms": [
+                "arrange",
+                "line up"
+              ]
+            },
+            {
+              "partOfSpeech": "",
+              "text": "조정하다",
+              "synonyms": []
+            }
+          ],
+          "audioUrl": "https://mobile3.classcard.net/uploads/audio/u/ne/en/nevoca25/NEVOCA_S2_A_DAY11_align.mp3",
+          "favorite": true,
+          "order": 1
+        },
+        {
+          "id": "card-e81a6a83-3bcd-4187-b45f-d13821c89a02",
+          "deckId": "deck-29a64b51-ebd0-4f20-8e6e-8fc95fc84e9f",
+          "front": "hesitate",
+          "partOfSpeech": "동",
+          "meanings": [
+            {
+              "partOfSpeech": "동",
+              "text": "망설이다, 주저하다",
+              "synonyms": [
+                "waver"
+              ]
+            }
+          ],
+          "audioUrl": "https://mobile3.classcard.net/uploads/audio/u/ne/en/nevoca25/NEVOCA_S2_A_DAY11_hesitate.mp3",
+          "favorite": false,
+          "order": 2
+        },
+        {
+          "id": "card-a79397b2-54b7-43ef-a5c2-dfa4ab6f1877",
+          "deckId": "deck-29a64b51-ebd0-4f20-8e6e-8fc95fc84e9f",
+          "front": "assess",
+          "partOfSpeech": "동",
+          "meanings": [
+            {
+              "partOfSpeech": "동",
+              "text": "평가하다",
+              "synonyms": [
+                "evaluate",
+                "estimate"
+              ]
+            },
+            {
+              "partOfSpeech": "",
+              "text": "산정하다, 부과하다",
+              "synonyms": [
+                "impose"
+              ]
+            }
+          ],
+          "audioUrl": "https://mobile3.classcard.net/uploads/audio/u/ne/en/nevoca25/NEVOCA_S2_A_DAY11_assess.mp3",
+          "favorite": true,
+          "order": 3
+        },
+        {
+          "id": "card-25f28e78-3e01-4ee5-937e-7916036221e0",
+          "deckId": "deck-29a64b51-ebd0-4f20-8e6e-8fc95fc84e9f",
+          "front": "originality",
+          "partOfSpeech": "명",
+          "meanings": [
+            {
+              "partOfSpeech": "명",
+              "text": "독창성",
+              "synonyms": [
+                "ingenuity",
+                "creativity"
+              ]
+            }
+          ],
+          "audioUrl": "https://mobile3.classcard.net/uploads/audio/u/ne/en/nevoca25/NEVOCA_S2_A_DAY11_originality.mp3",
+          "favorite": false,
+          "order": 4
+        },
+        {
+          "id": "card-30823c76-c00c-4f75-b7ae-488146a3f8f4",
+          "deckId": "deck-29a64b51-ebd0-4f20-8e6e-8fc95fc84e9f",
+          "front": "persevere",
+          "partOfSpeech": "동",
+          "meanings": [
+            {
+              "partOfSpeech": "동",
+              "text": "인내하며 계속하다",
+              "synonyms": [
+                "persist",
+                "endure",
+                "hold on"
+              ]
+            }
+          ],
+          "audioUrl": "https://mobile3.classcard.net/uploads/audio/u/ne/en/nevoca25/NEVOCA_S2_A_DAY11_persevere.mp3",
+          "favorite": false,
+          "order": 5
+        },
+        {
+          "id": "card-6caf040b-c141-4de6-8eac-d35e47eb5f7d",
+          "deckId": "deck-29a64b51-ebd0-4f20-8e6e-8fc95fc84e9f",
+          "front": "intrinsic",
+          "partOfSpeech": "형",
+          "meanings": [
+            {
+              "partOfSpeech": "형",
+              "text": "본질적인, 고유한",
+              "synonyms": [
+                "inherent",
+                "innate"
+              ]
+            }
+          ],
+          "audioUrl": "https://mobile3.classcard.net/uploads/audio/u/ne/en/nevoca25/NEVOCA_S2_A_DAY11_intrinsic.mp3",
+          "favorite": false,
+          "order": 6
+        },
+        {
+          "id": "card-adbbc4c5-2676-47f1-b2d6-1ab83f8e1d27",
+          "deckId": "deck-29a64b51-ebd0-4f20-8e6e-8fc95fc84e9f",
+          "front": "refugee",
+          "partOfSpeech": "명",
+          "meanings": [
+            {
+              "partOfSpeech": "명",
+              "text": "난민, 망명자",
+              "synonyms": [
+                "exile"
+              ]
+            }
+          ],
+          "audioUrl": "https://mobile3.classcard.net/uploads/audio/u/ne/en/nevoca25/NEVOCA_S2_A_DAY11_refugee.mp3",
+          "favorite": false,
+          "order": 7
+        },
+        {
+          "id": "card-fa37cdd1-76fd-478c-b1c6-56c1d415c0f5",
+          "deckId": "deck-29a64b51-ebd0-4f20-8e6e-8fc95fc84e9f",
+          "front": "offense",
+          "partOfSpeech": "명",
+          "meanings": [
+            {
+              "partOfSpeech": "명",
+              "text": "범죄, 위반",
+              "synonyms": [
+                "crime",
+                "violation"
+              ]
+            },
+            {
+              "partOfSpeech": "",
+              "text": "모욕, 불쾌하게 하는 것",
+              "synonyms": []
+            },
+            {
+              "partOfSpeech": "",
+              "text": "(스포츠) 공격",
+              "synonyms": []
+            }
+          ],
+          "audioUrl": "https://mobile3.classcard.net/uploads/audio/u/ne/en/nevoca25/NEVOCA_S2_A_DAY11_offense.mp3",
+          "favorite": true,
+          "order": 8
+        },
+        {
+          "id": "card-843a895e-655c-4121-94a6-4ac1323eb5b3",
+          "deckId": "deck-29a64b51-ebd0-4f20-8e6e-8fc95fc84e9f",
+          "front": "profession",
+          "partOfSpeech": "명",
+          "meanings": [
+            {
+              "partOfSpeech": "명",
+              "text": "직업, 전문직",
+              "synonyms": [
+                "occupation"
+              ]
+            },
+            {
+              "partOfSpeech": "",
+              "text": "공언, 선언",
+              "synonyms": [
+                "declaration"
+              ]
+            }
+          ],
+          "audioUrl": "https://mobile3.classcard.net/uploads/audio/u/ne/en/nevoca25/NEVOCA_S2_A_DAY11_profession.mp3",
+          "favorite": false,
+          "order": 9
+        },
+        {
+          "id": "card-c8ffe7d0-080f-4a32-ba58-eeb57c2c8536",
+          "deckId": "deck-29a64b51-ebd0-4f20-8e6e-8fc95fc84e9f",
+          "front": "inquire",
+          "partOfSpeech": "",
+          "meanings": [
+            {
+              "partOfSpeech": "동",
+              "text": "묻다, 문의하다",
+              "synonyms": [
+                "question"
+              ]
+            },
+            {
+              "partOfSpeech": "",
+              "text": "조사하다",
+              "synonyms": [
+                "investigate"
+              ]
+            }
+          ],
+          "audioUrl": "https://mobile3.classcard.net/uploads/audio/u/ne/en/nevoca25/NEVOCA_S2_A_DAY11_inquire.mp3",
+          "favorite": false,
+          "order": 10
+        },
+        {
+          "id": "card-498d54a0-4b24-4241-83fe-72ce90c6d3f1",
+          "deckId": "deck-29a64b51-ebd0-4f20-8e6e-8fc95fc84e9f",
+          "front": "trivial",
+          "partOfSpeech": "",
+          "meanings": [
+            {
+              "partOfSpeech": "형",
+              "text": "사소한, 하찮은",
+              "synonyms": [
+                "insignificant",
+                "minor"
+              ]
+            }
+          ],
+          "audioUrl": "https://mobile3.classcard.net/uploads/audio/u/ne/en/nevoca25/NEVOCA_S2_A_DAY11_trivial.mp3",
+          "favorite": false,
+          "order": 11
+        },
+        {
+          "id": "card-3c1fde8f-4e24-4b0b-8033-96fdb3d55f18",
+          "deckId": "deck-29a64b51-ebd0-4f20-8e6e-8fc95fc84e9f",
+          "front": "aspect",
+          "partOfSpeech": "명",
+          "meanings": [
+            {
+              "partOfSpeech": "명",
+              "text": "측면",
+              "synonyms": [
+                "facet"
+              ]
+            },
+            {
+              "partOfSpeech": "",
+              "text": "양상",
+              "synonyms": [
+                "facet"
+              ]
+            }
+          ],
+          "audioUrl": "https://mobile3.classcard.net/uploads/audio/u/ne/en/nevoca25/NEVOCA_S2_A_DAY11_aspect.mp3",
+          "favorite": false,
+          "order": 12
+        },
+        {
+          "id": "card-fd800fcb-8b57-43ea-9b4c-69b9c570aec2",
+          "deckId": "deck-29a64b51-ebd0-4f20-8e6e-8fc95fc84e9f",
+          "front": "assimilate",
+          "partOfSpeech": "",
+          "meanings": [
+            {
+              "partOfSpeech": "동",
+              "text": "완전히 이해하다",
+              "synonyms": [
+                "comprehend"
+              ]
+            },
+            {
+              "partOfSpeech": "",
+              "text": "동화되다(시키다)",
+              "synonyms": [
+                "adapt"
+              ]
+            }
+          ],
+          "audioUrl": "https://mobile3.classcard.net/uploads/audio/u/ne/en/nevoca25/NEVOCA_S2_A_DAY11_assimilate.mp3",
+          "favorite": false,
+          "order": 13
+        },
+        {
+          "id": "card-4dd19df0-02eb-42f1-868a-01eed8ff2958",
+          "deckId": "deck-29a64b51-ebd0-4f20-8e6e-8fc95fc84e9f",
+          "front": "outperform",
+          "partOfSpeech": "동",
+          "meanings": [
+            {
+              "partOfSpeech": "동",
+              "text": "능가하다, ~ 보다 성능이 우수하다",
+              "synonyms": [
+                "surpass",
+                "outdo",
+                "exceed"
+              ]
+            }
+          ],
+          "audioUrl": "https://mobile3.classcard.net/uploads/audio/u/ne/en/nevoca25/NEVOCA_S2_A_DAY11_outperform.mp3",
+          "favorite": false,
+          "order": 14
+        },
+        {
+          "id": "card-0607b997-d55b-47c9-b8cd-ea5ac68b720d",
+          "deckId": "deck-29a64b51-ebd0-4f20-8e6e-8fc95fc84e9f",
+          "front": "implement",
+          "partOfSpeech": "동",
+          "meanings": [
+            {
+              "partOfSpeech": "동",
+              "text": "이행,(실행)하다",
+              "synonyms": [
+                "carry out"
+              ]
+            },
+            {
+              "partOfSpeech": "명",
+              "text": "도구, 기구",
+              "synonyms": [
+                "tool",
+                "instrument"
+              ]
+            }
+          ],
+          "audioUrl": "https://mobile3.classcard.net/uploads/audio/u/ne/en/nevoca25/NEVOCA_S2_A_DAY11_implement.mp3",
+          "favorite": false,
+          "order": 15
+        },
+        {
+          "id": "card-19f4339a-627a-4897-9d36-ec57151c5f56",
+          "deckId": "deck-29a64b51-ebd0-4f20-8e6e-8fc95fc84e9f",
+          "front": "excavate",
+          "partOfSpeech": "",
+          "meanings": [
+            {
+              "partOfSpeech": "ehd",
+              "text": "발굴하다",
+              "synonyms": [
+                "unearth"
+              ]
+            },
+            {
+              "partOfSpeech": "",
+              "text": "(구멍 등을) 파다",
+              "synonyms": [
+                "dig"
+              ]
+            }
+          ],
+          "audioUrl": "https://mobile3.classcard.net/uploads/audio/u/ne/en/nevoca25/NEVOCA_S2_A_DAY11_excavate.mp3",
+          "favorite": false,
+          "order": 16
+        },
+        {
+          "id": "card-9e86b1af-c455-442e-946c-b80b183ec749",
+          "deckId": "deck-29a64b51-ebd0-4f20-8e6e-8fc95fc84e9f",
+          "front": "computation",
+          "partOfSpeech": "",
+          "meanings": [
+            {
+              "partOfSpeech": "명",
+              "text": "계산",
+              "synonyms": [
+                "calculation"
+              ]
+            }
+          ],
+          "audioUrl": "https://mobile3.classcard.net/uploads/audio/u/ne/en/nevoca25/NEVOCA_S2_A_DAY11_computation.mp3",
+          "favorite": false,
+          "order": 17
+        },
+        {
+          "id": "card-31f6948f-ea2b-491f-9b88-36dff9d22d84",
+          "deckId": "deck-29a64b51-ebd0-4f20-8e6e-8fc95fc84e9f",
+          "front": "bound",
+          "partOfSpeech": "동",
+          "meanings": [
+            {
+              "partOfSpeech": "형",
+              "text": "~할 가능성이 큰",
+              "synonyms": []
+            },
+            {
+              "partOfSpeech": "동",
+              "text": "~할 (법적) 의무가 있는",
+              "synonyms": [
+                "obliged"
+              ]
+            },
+            {
+              "partOfSpeech": "동",
+              "text": "껑충 뛰다",
+              "synonyms": [
+                "leap"
+              ]
+            },
+            {
+              "partOfSpeech": "",
+              "text": "경계를 이루다",
+              "synonyms": []
+            }
+          ],
+          "audioUrl": "https://mobile3.classcard.net/uploads/audio/u/ne/en/nevoca25/NEVOCA_S2_A_DAY11_bound.mp3",
+          "favorite": false,
+          "order": 18
+        },
+        {
+          "id": "card-694d3a70-2888-4bc6-93cd-76638a2f9840",
+          "deckId": "deck-29a64b51-ebd0-4f20-8e6e-8fc95fc84e9f",
+          "front": "allot",
+          "partOfSpeech": "",
+          "meanings": [
+            {
+              "partOfSpeech": "동",
+              "text": "할당(배당)하다",
+              "synonyms": [
+                "allocate",
+                "assign"
+              ]
+            }
+          ],
+          "audioUrl": "https://mobile3.classcard.net/uploads/audio/u/ne/en/nevoca25/NEVOCA_S2_A_DAY11_allot.mp3",
+          "favorite": false,
+          "order": 19
+        },
+        {
+          "id": "card-a580bf1a-e108-4ce2-b492-5a6f0283861a",
+          "deckId": "deck-29a64b51-ebd0-4f20-8e6e-8fc95fc84e9f",
+          "front": "sack",
+          "partOfSpeech": "명",
+          "meanings": [
+            {
+              "partOfSpeech": "명",
+              "text": "자루, 부대",
+              "synonyms": [
+                "bag",
+                "pouch"
+              ]
+            },
+            {
+              "partOfSpeech": "",
+              "text": "약탈",
+              "synonyms": [
+                "plunder"
+              ]
+            },
+            {
+              "partOfSpeech": "동",
+              "text": "약탈하다",
+              "synonyms": [
+                "plunder"
+              ]
+            }
+          ],
+          "audioUrl": "https://mobile3.classcard.net/uploads/audio/u/ne/en/nevoca25/NEVOCA_S2_A_DAY11_sack.mp3",
+          "favorite": false,
+          "order": 20
+        },
+        {
+          "id": "card-55509e75-6c85-4fee-8899-8c5610aa45a7",
+          "deckId": "deck-29a64b51-ebd0-4f20-8e6e-8fc95fc84e9f",
+          "front": "significant",
+          "partOfSpeech": "",
+          "meanings": [
+            {
+              "partOfSpeech": "형",
+              "text": "중요한, 의미 있는",
+              "synonyms": [
+                "meaningful"
+              ]
+            },
+            {
+              "partOfSpeech": "",
+              "text": "상당한",
+              "synonyms": [
+                "considerable"
+              ]
+            }
+          ],
+          "audioUrl": "https://mobile3.classcard.net/uploads/audio/u/ne/en/nevoca25/NEVOCA_S2_A_DAY11_significant.mp3",
+          "favorite": false,
+          "order": 21
+        },
+        {
+          "id": "card-c52986be-d71b-4b9c-8f5f-c28e91b39bb2",
+          "deckId": "deck-29a64b51-ebd0-4f20-8e6e-8fc95fc84e9f",
+          "front": "attain",
+          "partOfSpeech": "동",
+          "meanings": [
+            {
+              "partOfSpeech": "동",
+              "text": "이루다",
+              "synonyms": []
+            },
+            {
+              "partOfSpeech": "",
+              "text": "(특정 수준 등에) 도달하다",
+              "synonyms": []
+            }
+          ],
+          "audioUrl": "https://mobile3.classcard.net/uploads/audio/u/ne/en/nevoca25/NEVOCA_S2_A_DAY11_attain.mp3",
+          "favorite": false,
+          "order": 22
+        },
+        {
+          "id": "card-4e42f12c-90ab-48a3-a6be-6666dd8cd8a9",
+          "deckId": "deck-29a64b51-ebd0-4f20-8e6e-8fc95fc84e9f",
+          "front": "inventory",
+          "partOfSpeech": "명",
+          "meanings": [
+            {
+              "partOfSpeech": "명",
+              "text": "물품 목록",
+              "synonyms": []
+            },
+            {
+              "partOfSpeech": "",
+              "text": "재고(품)",
+              "synonyms": [
+                "stock"
+              ]
+            }
+          ],
+          "audioUrl": "https://mobile3.classcard.net/uploads/audio/u/ne/en/nevoca25/NEVOCA_S2_A_DAY11_inventory.mp3",
+          "favorite": false,
+          "order": 23
+        },
+        {
+          "id": "card-632ccd3d-d769-4658-9d1f-a7687e64ce11",
+          "deckId": "deck-29a64b51-ebd0-4f20-8e6e-8fc95fc84e9f",
+          "front": "indigenous",
+          "partOfSpeech": "형",
+          "meanings": [
+            {
+              "partOfSpeech": "형",
+              "text": "토착의, 원산의",
+              "synonyms": [
+                "native",
+                "aboriginal"
+              ]
+            }
+          ],
+          "audioUrl": "https://mobile3.classcard.net/uploads/audio/u/ne/en/nevoca25/NEVOCA_S2_A_DAY11_indigenous.mp3",
+          "favorite": false,
+          "order": 24
+        },
+        {
+          "id": "card-d17bdbbd-8a37-4d10-9db0-ec657f1b53cd",
+          "deckId": "deck-29a64b51-ebd0-4f20-8e6e-8fc95fc84e9f",
+          "front": "charity",
+          "partOfSpeech": "명",
+          "meanings": [
+            {
+              "partOfSpeech": "명",
+              "text": "자선 단체",
+              "synonyms": []
+            },
+            {
+              "partOfSpeech": "",
+              "text": "자선 (행위)",
+              "synonyms": []
+            },
+            {
+              "partOfSpeech": "",
+              "text": "관용, 자비",
+              "synonyms": [
+                "generosity"
+              ]
+            }
+          ],
+          "audioUrl": "https://mobile3.classcard.net/uploads/audio/u/ne/en/nevoca25/NEVOCA_S2_A_DAY11_charity.mp3",
+          "favorite": false,
+          "order": 25
+        },
+        {
+          "id": "card-a6872a73-8124-4caf-beac-865a52afbea9",
+          "deckId": "deck-29a64b51-ebd0-4f20-8e6e-8fc95fc84e9f",
+          "front": "desirable",
+          "partOfSpeech": "형",
+          "meanings": [
+            {
+              "partOfSpeech": "형",
+              "text": "바람직한, 호감 가는",
+              "synonyms": [
+                "advisable"
+              ]
+            }
+          ],
+          "audioUrl": "https://mobile3.classcard.net/uploads/audio/u/ne/en/nevoca25/NEVOCA_S2_A_DAY11_desirable.mp3",
+          "favorite": false,
+          "order": 26
+        },
+        {
+          "id": "card-b824ff98-ad41-42a6-80f0-b5ae8dac9524",
+          "deckId": "deck-29a64b51-ebd0-4f20-8e6e-8fc95fc84e9f",
+          "front": "authoritative",
+          "partOfSpeech": "형",
+          "meanings": [
+            {
+              "partOfSpeech": "형",
+              "text": "(책등이 ) 권위 있는, 믿을 만한",
+              "synonyms": [
+                "reliable"
+              ]
+            },
+            {
+              "partOfSpeech": "",
+              "text": "권위적인",
+              "synonyms": [
+                "commanding"
+              ]
+            }
+          ],
+          "audioUrl": "https://mobile3.classcard.net/uploads/audio/u/ne/en/nevoca25/NEVOCA_S2_A_DAY11_authoritative.mp3",
+          "favorite": false,
+          "order": 27
+        },
+        {
+          "id": "card-a8ea350a-a195-46bb-ba56-14096c402edb",
+          "deckId": "deck-29a64b51-ebd0-4f20-8e6e-8fc95fc84e9f",
+          "front": "complicated",
+          "partOfSpeech": "형",
+          "meanings": [
+            {
+              "partOfSpeech": "형",
+              "text": "복잡한",
+              "synonyms": [
+                "complex"
+              ]
+            }
+          ],
+          "audioUrl": "https://mobile3.classcard.net/uploads/audio/u/ne/en/nevoca25/NEVOCA_S2_A_DAY11_complicated.mp3",
+          "favorite": false,
+          "order": 28
+        },
+        {
+          "id": "card-e98f7a29-3e22-478c-927d-43e7d0a07bbd",
+          "deckId": "deck-29a64b51-ebd0-4f20-8e6e-8fc95fc84e9f",
+          "front": "proliferate",
+          "partOfSpeech": "동",
+          "meanings": [
+            {
+              "partOfSpeech": "동",
+              "text": "급증하다, (빠르게) 확산되다",
+              "synonyms": [
+                "multiply",
+                "spread"
+              ]
+            }
+          ],
+          "audioUrl": "https://mobile3.classcard.net/uploads/audio/u/ne/en/nevoca25/NEVOCA_S2_A_DAY11_proliferate.mp3",
+          "favorite": false,
+          "order": 29
+        },
+        {
+          "id": "card-eb591e49-21f7-47c3-bd63-8f31bab90605",
+          "deckId": "deck-29a64b51-ebd0-4f20-8e6e-8fc95fc84e9f",
+          "front": "arguably",
+          "partOfSpeech": "",
+          "meanings": [
+            {
+              "partOfSpeech": "부",
+              "text": "주장하건대, 거의 틀림 없이",
+              "synonyms": []
+            }
+          ],
+          "audioUrl": "https://mobile3.classcard.net/uploads/audio/u/ne/en/nevoca25/NEVOCA_S2_A_DAY11_arguably.mp3",
+          "favorite": false,
+          "order": 30
+        },
+        {
+          "id": "card-b092dce3-c0c7-423c-8bff-67bc902c6985",
+          "deckId": "deck-29a64b51-ebd0-4f20-8e6e-8fc95fc84e9f",
+          "front": "numerous",
+          "partOfSpeech": "형",
+          "meanings": [
+            {
+              "partOfSpeech": "형",
+              "text": "다수의, 많은",
+              "synonyms": [
+                "multiple"
+              ]
+            }
+          ],
+          "audioUrl": "https://mobile3.classcard.net/uploads/audio/u/ne/en/nevoca25/NEVOCA_S2_A_DAY11_numerous.mp3",
+          "favorite": false,
+          "order": 31
+        },
+        {
+          "id": "card-ae5fd46c-04d6-4e5e-85f2-18fe8fbc9725",
+          "deckId": "deck-29a64b51-ebd0-4f20-8e6e-8fc95fc84e9f",
+          "front": "error",
+          "partOfSpeech": "대",
+          "meanings": [
+            {
+              "partOfSpeech": "",
+              "text": "error",
+              "synonyms": []
+            }
+          ],
+          "audioUrl": "",
+          "favorite": false,
+          "order": 32
+        },
+        {
+          "id": "card-39a75300-a64a-49d7-a709-46a072a0c993",
+          "deckId": "deck-29a64b51-ebd0-4f20-8e6e-8fc95fc84e9f",
+          "front": "numerical",
+          "partOfSpeech": "",
+          "meanings": [
+            {
+              "partOfSpeech": "형",
+              "text": "수의, 수와 관련된",
+              "synonyms": []
+            }
+          ],
+          "audioUrl": "https://mobile3.classcard.net/uploads/audio/u/ne/en/nevoca25/NEVOCA_S2_A_DAY11_numerical.mp3",
+          "favorite": false,
+          "order": 33
+        },
+        {
+          "id": "card-a36d7770-2bfe-42aa-ba9a-40269e4fe621",
+          "deckId": "deck-29a64b51-ebd0-4f20-8e6e-8fc95fc84e9f",
+          "front": "induce",
+          "partOfSpeech": "동",
+          "meanings": [
+            {
+              "partOfSpeech": "동",
+              "text": "유도하다, 설득하다",
+              "synonyms": [
+                "persuade",
+                "convince"
+              ]
+            },
+            {
+              "partOfSpeech": "동",
+              "text": "유발하다",
+              "synonyms": [
+                "cause"
+              ]
+            }
+          ],
+          "audioUrl": "https://mobile3.classcard.net/uploads/audio/u/ne/en/nevoca25/NEVOCA_S2_A_DAY11_induce.mp3",
+          "favorite": false,
+          "order": 34
+        },
+        {
+          "id": "card-23698727-f71f-45fd-b08b-b5ba373993e6",
+          "deckId": "deck-29a64b51-ebd0-4f20-8e6e-8fc95fc84e9f",
+          "front": "deduce",
+          "partOfSpeech": "",
+          "meanings": [
+            {
+              "partOfSpeech": "동",
+              "text": "추론[추정]하다, 연역하다",
+              "synonyms": [
+                "infer"
+              ]
+            }
+          ],
+          "audioUrl": "https://mobile3.classcard.net/uploads/audio/u/ne/en/nevoca25/NEVOCA_S2_A_DAY11_deduce.mp3",
+          "favorite": false,
+          "order": 35
+        },
+        {
+          "id": "card-26a17719-b572-4b57-9265-f19d288784ea",
+          "deckId": "deck-29a64b51-ebd0-4f20-8e6e-8fc95fc84e9f",
+          "front": "come about",
+          "partOfSpeech": "",
+          "meanings": [
+            {
+              "partOfSpeech": "",
+              "text": "(우연히) 발생하다, 일어나다",
+              "synonyms": [
+                "occur",
+                "take place"
+              ]
+            }
+          ],
+          "audioUrl": "https://mobile3.classcard.net/uploads/audio/u/ne/en/nevoca25/NEVOCA_S2_A_DAY11_come%20about.mp3",
+          "favorite": false,
+          "order": 36
+        },
+        {
+          "id": "card-2ce54f6b-05eb-4f2e-ac43-1f863203f116",
+          "deckId": "deck-29a64b51-ebd0-4f20-8e6e-8fc95fc84e9f",
+          "front": "weed out",
+          "partOfSpeech": "",
+          "meanings": [
+            {
+              "partOfSpeech": "",
+              "text": "(불필요한 대상 등을) 제거하다, 뽑아 버리다",
+              "synonyms": [
+                "eliminate",
+                "remove"
+              ]
+            }
+          ],
+          "audioUrl": "https://mobile3.classcard.net/uploads/audio/u/ne/en/nevoca25/NEVOCA_S2_A_DAY11_weed%20out.mp3",
+          "favorite": false,
+          "order": 37
+        },
+        {
+          "id": "card-c77d3be0-ce4b-4c37-9891-896f0778ae51",
+          "deckId": "deck-29a64b51-ebd0-4f20-8e6e-8fc95fc84e9f",
+          "front": "draw on",
+          "partOfSpeech": "",
+          "meanings": [
+            {
+              "partOfSpeech": "",
+              "text": "(지식·경험 등을) 활용하다",
+              "synonyms": [
+                "utilize"
+              ]
+            }
+          ],
+          "audioUrl": "https://mobile3.classcard.net/uploads/audio/u/ne/en/nevoca25/NEVOCA_S2_A_DAY11_draw%20on.mp3",
+          "favorite": false,
+          "order": 38
+        },
+        {
+          "id": "card-3259c06a-8ddc-4b5a-b377-78c68b9829e5",
+          "deckId": "deck-29a64b51-ebd0-4f20-8e6e-8fc95fc84e9f",
+          "front": "correspond to",
+          "partOfSpeech": "",
+          "meanings": [
+            {
+              "partOfSpeech": "",
+              "text": "~에 해당하다, ~와 일치하다",
+              "synonyms": []
+            }
+          ],
+          "audioUrl": "https://mobile3.classcard.net/uploads/audio/u/ne/en/nevoca25/NEVOCA_S2_A_DAY11_correspond%20to.mp3",
+          "favorite": false,
+          "order": 39
+        }
+      ],
+      "createdAt": "2026-10-20T10:12:27.867Z",
+      "updatedAt": "2026-10-20T13:03:21.379Z"
+    },
+    {
+      "id": "deck-d4e068c4-afdd-42d5-980f-69582da16001",
+      "name": "DAY 13",
+      "normalizedName": "day 13",
+      "cards": [
+        {
+          "id": "card-bda09f39-cbd2-4a19-b1ba-9d9bffec9eb9",
+          "deckId": "deck-d4e068c4-afdd-42d5-980f-69582da16001",
+          "front": "manuscript",
+          "partOfSpeech": "명",
+          "meanings": [
+            {
+              "partOfSpeech": "명",
+              "text": "원고",
+              "synonyms": [
+                "script"
+              ]
+            },
+            {
+              "partOfSpeech": "명",
+              "text": "필사본, 사본",
+              "synonyms": []
+            }
+          ],
+          "audioUrl": "https://mobile3.classcard.net/uploads/audio/u/ne/en/nevoca25/NEVOCA_S2_A_DAY13_manuscript.mp3",
+          "favorite": false,
+          "order": 0
+        },
+        {
+          "id": "card-37e4c2f0-c01d-4931-a739-4d06102b5c64",
+          "deckId": "deck-d4e068c4-afdd-42d5-980f-69582da16001",
+          "front": "scatter",
+          "partOfSpeech": "동",
+          "meanings": [
+            {
+              "partOfSpeech": "동",
+              "text": "(흩)뿌리다",
+              "synonyms": [
+                "strew"
+              ]
+            },
+            {
+              "partOfSpeech": "",
+              "text": "(군중 등이) 흩어지다, 흩어지게 하다",
+              "synonyms": [
+                "disperse"
+              ]
+            }
+          ],
+          "audioUrl": "https://mobile3.classcard.net/uploads/audio/u/ne/en/nevoca25/NEVOCA_S2_A_DAY13_scatter.mp3",
+          "favorite": false,
+          "order": 1
+        },
+        {
+          "id": "card-813ccc61-f9af-4755-9761-7e18e3e431e2",
+          "deckId": "deck-d4e068c4-afdd-42d5-980f-69582da16001",
+          "front": "gene",
+          "partOfSpeech": "",
+          "meanings": [
+            {
+              "partOfSpeech": "명",
+              "text": "유전자",
+              "synonyms": []
+            }
+          ],
+          "audioUrl": "https://mobile3.classcard.net/uploads/audio/u/ne/en/nevoca25/NEVOCA_S2_A_DAY13_gene.mp3",
+          "favorite": false,
+          "order": 2
+        },
+        {
+          "id": "card-335c5f28-eadb-4466-a15d-ffaeaae1edd6",
+          "deckId": "deck-d4e068c4-afdd-42d5-980f-69582da16001",
+          "front": "cater",
+          "partOfSpeech": "",
+          "meanings": [
+            {
+              "partOfSpeech": "동",
+              "text": "(행사에) 음식을 제공하다",
+              "synonyms": []
+            },
+            {
+              "partOfSpeech": "",
+              "text": "((~ to)) (요구 등을) 충족시키다",
+              "synonyms": []
+            }
+          ],
+          "audioUrl": "https://mobile3.classcard.net/uploads/audio/u/ne/en/nevoca25/NEVOCA_S2_A_DAY13_cater.mp3",
+          "favorite": false,
+          "order": 3
+        },
+        {
+          "id": "card-181b2709-5238-4675-9100-01470df50432",
+          "deckId": "deck-d4e068c4-afdd-42d5-980f-69582da16001",
+          "front": "halt",
+          "partOfSpeech": "",
+          "meanings": [
+            {
+              "partOfSpeech": "명",
+              "text": "정지, 중단",
+              "synonyms": [
+                "stop",
+                "pause"
+              ]
+            },
+            {
+              "partOfSpeech": "동",
+              "text": "정지시키다, 멈추다",
+              "synonyms": [
+                "stop",
+                "cease"
+              ]
+            }
+          ],
+          "audioUrl": "https://mobile3.classcard.net/uploads/audio/u/ne/en/nevoca25/NEVOCA_S2_A_DAY13_halt.mp3",
+          "favorite": false,
+          "order": 4
+        },
+        {
+          "id": "card-f6fdbf35-830c-46a3-9b43-04e226c801ae",
+          "deckId": "deck-d4e068c4-afdd-42d5-980f-69582da16001",
+          "front": "companion",
+          "partOfSpeech": "명",
+          "meanings": [
+            {
+              "partOfSpeech": "명",
+              "text": "동반자, 동행, 친구",
+              "synonyms": [
+                "associate"
+              ]
+            },
+            {
+              "partOfSpeech": "명",
+              "text": "(책 등의) 안내서",
+              "synonyms": []
+            }
+          ],
+          "audioUrl": "https://mobile3.classcard.net/uploads/audio/u/ne/en/nevoca25/NEVOCA_S2_A_DAY13_companion.mp3",
+          "favorite": false,
+          "order": 5
+        },
+        {
+          "id": "card-ec2c1685-0b6f-4824-8747-53b5a0a879c3",
+          "deckId": "deck-d4e068c4-afdd-42d5-980f-69582da16001",
+          "front": "acknowledge",
+          "partOfSpeech": "",
+          "meanings": [
+            {
+              "partOfSpeech": "동",
+              "text": "인정하다",
+              "synonyms": [
+                "recognize",
+                "admit"
+              ]
+            },
+            {
+              "partOfSpeech": "",
+              "text": "감사를 표하다",
+              "synonyms": [
+                "appreciate"
+              ]
+            }
+          ],
+          "audioUrl": "https://mobile3.classcard.net/uploads/audio/u/ne/en/nevoca25/NEVOCA_S2_A_DAY13_acknowledge.mp3",
+          "favorite": false,
+          "order": 6
+        },
+        {
+          "id": "card-b83ed699-7cd1-4ec9-a4a5-136ae69267b7",
+          "deckId": "deck-d4e068c4-afdd-42d5-980f-69582da16001",
+          "front": "intact",
+          "partOfSpeech": "",
+          "meanings": [
+            {
+              "partOfSpeech": "형",
+              "text": "손상 되지 않은, 온전한",
+              "synonyms": [
+                "undamaged",
+                "entire",
+                "whole"
+              ]
+            }
+          ],
+          "audioUrl": "https://mobile3.classcard.net/uploads/audio/u/ne/en/nevoca25/NEVOCA_S2_A_DAY13_intact.mp3",
+          "favorite": false,
+          "order": 7
+        },
+        {
+          "id": "card-24d4672e-f6e7-41fd-8a99-b99413e9932a",
+          "deckId": "deck-d4e068c4-afdd-42d5-980f-69582da16001",
+          "front": "assert",
+          "partOfSpeech": "동",
+          "meanings": [
+            {
+              "partOfSpeech": "동",
+              "text": "주장하다, 단언하다",
+              "synonyms": [
+                "affirm",
+                "declare"
+              ]
+            },
+            {
+              "partOfSpeech": "",
+              "text": "(권리 등을) 행사하다",
+              "synonyms": []
+            }
+          ],
+          "audioUrl": "https://mobile3.classcard.net/uploads/audio/u/ne/en/nevoca25/NEVOCA_S2_A_DAY13_assert.mp3",
+          "favorite": false,
+          "order": 8
+        },
+        {
+          "id": "card-4578e6cc-3af2-45ca-b76f-86b9ce54e948",
+          "deckId": "deck-d4e068c4-afdd-42d5-980f-69582da16001",
+          "front": "insurance",
+          "partOfSpeech": "동",
+          "meanings": [
+            {
+              "partOfSpeech": "명",
+              "text": "보험 (금), 보험료",
+              "synonyms": [
+                "coverage"
+              ]
+            },
+            {
+              "partOfSpeech": "",
+              "text": "보호(예방) 수단",
+              "synonyms": [
+                "protection"
+              ]
+            }
+          ],
+          "audioUrl": "https://mobile3.classcard.net/uploads/audio/u/ne/en/nevoca25/NEVOCA_S2_A_DAY13_insurance.mp3",
+          "favorite": false,
+          "order": 9
+        },
+        {
+          "id": "card-a23a0740-3533-4560-b51c-e438df5a8139",
+          "deckId": "deck-d4e068c4-afdd-42d5-980f-69582da16001",
+          "front": "flesh",
+          "partOfSpeech": "",
+          "meanings": [
+            {
+              "partOfSpeech": "명",
+              "text": "(사람·동물의) 살, 고기",
+              "synonyms": []
+            },
+            {
+              "partOfSpeech": "",
+              "text": "피부",
+              "synonyms": []
+            },
+            {
+              "partOfSpeech": "",
+              "text": "(과일의) 과육",
+              "synonyms": []
+            }
+          ],
+          "audioUrl": "https://mobile3.classcard.net/uploads/audio/u/ne/en/nevoca25/NEVOCA_S2_A_DAY13_flesh.mp3",
+          "favorite": false,
+          "order": 10
+        },
+        {
+          "id": "card-7be91604-4779-4034-afa2-50c5be16b8c1",
+          "deckId": "deck-d4e068c4-afdd-42d5-980f-69582da16001",
+          "front": "locate",
+          "partOfSpeech": "동",
+          "meanings": [
+            {
+              "partOfSpeech": "동",
+              "text": "위치를 찾아내다",
+              "synonyms": [
+                "find",
+                "discover"
+              ]
+            },
+            {
+              "partOfSpeech": "",
+              "text": "두다, 설치하다",
+              "synonyms": [
+                "place",
+                "situate"
+              ]
+            }
+          ],
+          "audioUrl": "https://mobile3.classcard.net/uploads/audio/u/ne/en/nevoca25/NEVOCA_S2_A_DAY13_locate.mp3",
+          "favorite": false,
+          "order": 11
+        },
+        {
+          "id": "card-911999be-7b3a-4817-a9d4-4b93597d5c05",
+          "deckId": "deck-d4e068c4-afdd-42d5-980f-69582da16001",
+          "front": "arrogant",
+          "partOfSpeech": "",
+          "meanings": [
+            {
+              "partOfSpeech": "형",
+              "text": "오만한, 거만한",
+              "synonyms": [
+                "haughty",
+                "conceited"
+              ]
+            }
+          ],
+          "audioUrl": "https://mobile3.classcard.net/uploads/audio/u/ne/en/nevoca25/NEVOCA_S2_A_DAY13_arrogant.mp3",
+          "favorite": false,
+          "order": 12
+        },
+        {
+          "id": "card-ad3a0435-1e4e-4808-b693-8e72a89e9914",
+          "deckId": "deck-d4e068c4-afdd-42d5-980f-69582da16001",
+          "front": "evoke",
+          "partOfSpeech": "",
+          "meanings": [
+            {
+              "partOfSpeech": "동",
+              "text": "(감정·기억 등을) 불러일으키다",
+              "synonyms": [
+                "arouse",
+                "elicit"
+              ]
+            }
+          ],
+          "audioUrl": "https://mobile3.classcard.net/uploads/audio/u/ne/en/nevoca25/NEVOCA_S2_A_DAY13_evoke.mp3",
+          "favorite": false,
+          "order": 13
+        },
+        {
+          "id": "card-cb3c5699-aa6e-41b7-a310-e8208ac04e38",
+          "deckId": "deck-d4e068c4-afdd-42d5-980f-69582da16001",
+          "front": "primitive",
+          "partOfSpeech": "동",
+          "meanings": [
+            {
+              "partOfSpeech": "형",
+              "text": "원시 사회의",
+              "synonyms": []
+            },
+            {
+              "partOfSpeech": "",
+              "text": "원시적인 단계의, 초기의",
+              "synonyms": []
+            }
+          ],
+          "audioUrl": "https://mobile3.classcard.net/uploads/audio/u/ne/en/nevoca25/NEVOCA_S2_A_DAY13_primitive.mp3",
+          "favorite": false,
+          "order": 14
+        },
+        {
+          "id": "card-6c8d86b2-fe8e-4c45-aca2-6c6ef636d290",
+          "deckId": "deck-d4e068c4-afdd-42d5-980f-69582da16001",
+          "front": "majority",
+          "partOfSpeech": "명",
+          "meanings": [
+            {
+              "partOfSpeech": "명",
+              "text": "대부분, 대다수",
+              "synonyms": [
+                "bulk",
+                "mass"
+              ]
+            },
+            {
+              "partOfSpeech": "",
+              "text": "과반수",
+              "synonyms": []
+            }
+          ],
+          "audioUrl": "https://mobile3.classcard.net/uploads/audio/u/ne/en/nevoca25/NEVOCA_S2_A_DAY13_majority.mp3",
+          "favorite": false,
+          "order": 15
+        },
+        {
+          "id": "card-f4ea778e-0a1b-4d88-8891-9c342e61c2cc",
+          "deckId": "deck-d4e068c4-afdd-42d5-980f-69582da16001",
+          "front": "sequence",
+          "partOfSpeech": "명",
+          "meanings": [
+            {
+              "partOfSpeech": "명",
+              "text": "연속, 연속적인 사건들",
+              "synonyms": []
+            },
+            {
+              "partOfSpeech": "",
+              "text": "순서, 차례",
+              "synonyms": [
+                "order"
+              ]
+            },
+            {
+              "partOfSpeech": "",
+              "text": "(영화 등의) 연속 장면",
+              "synonyms": []
+            }
+          ],
+          "audioUrl": "https://mobile3.classcard.net/uploads/audio/u/ne/en/nevoca25/NEVOCA_S2_A_DAY13_sequence.mp3",
+          "favorite": false,
+          "order": 16
+        },
+        {
+          "id": "card-0d27d25b-7821-4826-82e2-f28d83399236",
+          "deckId": "deck-d4e068c4-afdd-42d5-980f-69582da16001",
+          "front": "imperative",
+          "partOfSpeech": "",
+          "meanings": [
+            {
+              "partOfSpeech": "형",
+              "text": "필수적인, 긴급한",
+              "synonyms": [
+                "vital",
+                "urgent"
+              ]
+            },
+            {
+              "partOfSpeech": "형",
+              "text": "명령적인",
+              "synonyms": [
+                "commanding",
+                "authoritative"
+              ]
+            },
+            {
+              "partOfSpeech": "명",
+              "text": "긴급한 일",
+              "synonyms": []
+            },
+            {
+              "partOfSpeech": "명",
+              "text": "[문법] 명령법",
+              "synonyms": []
+            }
+          ],
+          "audioUrl": "https://mobile3.classcard.net/uploads/audio/u/ne/en/nevoca25/NEVOCA_S2_A_DAY13_imperative.mp3",
+          "favorite": false,
+          "order": 17
+        },
+        {
+          "id": "card-ee85f872-8a24-492e-93ce-b72aeafb91e3",
+          "deckId": "deck-d4e068c4-afdd-42d5-980f-69582da16001",
+          "front": "mortgage",
+          "partOfSpeech": "명",
+          "meanings": [
+            {
+              "partOfSpeech": "명",
+              "text": "담보 대출(금), 융자(금)",
+              "synonyms": []
+            },
+            {
+              "partOfSpeech": "동",
+              "text": "저당 잡히다",
+              "synonyms": []
+            }
+          ],
+          "audioUrl": "https://mobile3.classcard.net/uploads/audio/u/ne/en/nevoca25/NEVOCA_S2_A_DAY13_mortgage.mp3",
+          "favorite": false,
+          "order": 18
+        },
+        {
+          "id": "card-a6e17f6e-853d-43eb-a4f3-e10a654ad249",
+          "deckId": "deck-d4e068c4-afdd-42d5-980f-69582da16001",
+          "front": "anchor",
+          "partOfSpeech": "동",
+          "meanings": [
+            {
+              "partOfSpeech": "명",
+              "text": "닻",
+              "synonyms": []
+            },
+            {
+              "partOfSpeech": "명",
+              "text": "앵커, 진행자",
+              "synonyms": []
+            },
+            {
+              "partOfSpeech": "명",
+              "text": "(정신적) 버팀목",
+              "synonyms": []
+            },
+            {
+              "partOfSpeech": "동",
+              "text": "닻을 내리다",
+              "synonyms": []
+            },
+            {
+              "partOfSpeech": "동",
+              "text": "고정시키다",
+              "synonyms": [
+                "secure",
+                "fasten"
+              ]
+            }
+          ],
+          "audioUrl": "https://mobile3.classcard.net/uploads/audio/u/ne/en/nevoca25/NEVOCA_S2_A_DAY13_anchor.mp3",
+          "favorite": false,
+          "order": 19
+        },
+        {
+          "id": "card-d23bfef1-b76d-4a44-9722-391e7dac61aa",
+          "deckId": "deck-d4e068c4-afdd-42d5-980f-69582da16001",
+          "front": "frustrated",
+          "partOfSpeech": "",
+          "meanings": [
+            {
+              "partOfSpeech": "형",
+              "text": "좌절한, 불만스러워하는",
+              "synonyms": [
+                "disappointed",
+                "annoyed"
+              ]
+            }
+          ],
+          "audioUrl": "https://mobile3.classcard.net/uploads/audio/u/ne/en/nevoca25/NEVOCA_S2_A_DAY13_frustrated.mp3",
+          "favorite": false,
+          "order": 20
+        },
+        {
+          "id": "card-7fb9ad69-3380-4473-8b47-03d40f53a55a",
+          "deckId": "deck-d4e068c4-afdd-42d5-980f-69582da16001",
+          "front": "abandon",
+          "partOfSpeech": "",
+          "meanings": [
+            {
+              "partOfSpeech": "동",
+              "text": "버리다, 유기하다",
+              "synonyms": [
+                "desert",
+                "forsake"
+              ]
+            },
+            {
+              "partOfSpeech": "",
+              "text": "그만 두다, 포기하다",
+              "synonyms": [
+                "give up"
+              ]
+            }
+          ],
+          "audioUrl": "https://mobile3.classcard.net/uploads/audio/u/ne/en/nevoca25/NEVOCA_S2_A_DAY13_abandon.mp3",
+          "favorite": false,
+          "order": 21
+        },
+        {
+          "id": "card-4cf4a918-8271-4d18-97ee-e833664ab7e8",
+          "deckId": "deck-d4e068c4-afdd-42d5-980f-69582da16001",
+          "front": "immortal",
+          "partOfSpeech": "",
+          "meanings": [
+            {
+              "partOfSpeech": "",
+              "text": "불사의, 82",
+              "synonyms": []
+            }
+          ],
+          "audioUrl": "https://mobile3.classcard.net/uploads/audio/u/ne/en/nevoca25/NEVOCA_S2_A_DAY13_immortal.mp3",
+          "favorite": false,
+          "order": 22
+        },
+        {
+          "id": "card-3b10b43e-6b30-4e33-9f28-69789e9e6e91",
+          "deckId": "deck-d4e068c4-afdd-42d5-980f-69582da16001",
+          "front": "spark",
+          "partOfSpeech": "동",
+          "meanings": [
+            {
+              "partOfSpeech": "동",
+              "text": "촉발시키다",
+              "synonyms": [
+                "trigger"
+              ]
+            },
+            {
+              "partOfSpeech": "",
+              "text": "불꽃을 일으키다",
+              "synonyms": []
+            },
+            {
+              "partOfSpeech": "명",
+              "text": "불꽃, 불똥",
+              "synonyms": []
+            }
+          ],
+          "audioUrl": "https://mobile3.classcard.net/uploads/audio/u/ne/en/nevoca25/NEVOCA_S2_A_DAY13_spark.mp3",
+          "favorite": false,
+          "order": 23
+        },
+        {
+          "id": "card-c5f88ec4-8183-443c-abcd-cb7327334985",
+          "deckId": "deck-d4e068c4-afdd-42d5-980f-69582da16001",
+          "front": "hinder",
+          "partOfSpeech": "",
+          "meanings": [
+            {
+              "partOfSpeech": "동",
+              "text": "방해(저해)하다",
+              "synonyms": [
+                "obstruct",
+                "impede",
+                "hamper"
+              ]
+            }
+          ],
+          "audioUrl": "https://mobile3.classcard.net/uploads/audio/u/ne/en/nevoca25/NEVOCA_S2_A_DAY13_hinder.mp3",
+          "favorite": false,
+          "order": 24
+        },
+        {
+          "id": "card-a218840b-8f2e-400f-839c-8ddcb68a0278",
+          "deckId": "deck-d4e068c4-afdd-42d5-980f-69582da16001",
+          "front": "fundamental",
+          "partOfSpeech": "",
+          "meanings": [
+            {
+              "partOfSpeech": "형",
+              "text": "근본(기본)적인",
+              "synonyms": [
+                "basic",
+                "underlying"
+              ]
+            },
+            {
+              "partOfSpeech": "",
+              "text": "필수적인",
+              "synonyms": [
+                "essential"
+              ]
+            }
+          ],
+          "audioUrl": "https://mobile3.classcard.net/uploads/audio/u/ne/en/nevoca25/NEVOCA_S2_A_DAY13_fundamental.mp3",
+          "favorite": false,
+          "order": 25
+        },
+        {
+          "id": "card-5b7cfe31-e263-405c-b26c-0697378329f1",
+          "deckId": "deck-d4e068c4-afdd-42d5-980f-69582da16001",
+          "front": "activate",
+          "partOfSpeech": "",
+          "meanings": [
+            {
+              "partOfSpeech": "동",
+              "text": "작동시키다",
+              "synonyms": []
+            },
+            {
+              "partOfSpeech": "",
+              "text": "(화학 작용 등을) 활성 화하다",
+              "synonyms": []
+            }
+          ],
+          "audioUrl": "https://mobile3.classcard.net/uploads/audio/u/ne/en/nevoca25/NEVOCA_S2_A_DAY13_activate.mp3",
+          "favorite": false,
+          "order": 26
+        },
+        {
+          "id": "card-55037ca0-3161-4902-a206-836086658d82",
+          "deckId": "deck-d4e068c4-afdd-42d5-980f-69582da16001",
+          "front": "grin",
+          "partOfSpeech": "",
+          "meanings": [
+            {
+              "partOfSpeech": "동",
+              "text": "(이를 드러 내고) 활짝 웃다",
+              "synonyms": []
+            },
+            {
+              "partOfSpeech": "명",
+              "text": "활짝 웃음",
+              "synonyms": []
+            }
+          ],
+          "audioUrl": "https://mobile3.classcard.net/uploads/audio/u/ne/en/nevoca25/NEVOCA_S2_A_DAY13_grin.mp3",
+          "favorite": false,
+          "order": 27
+        },
+        {
+          "id": "card-23176eb5-dcb2-4174-94dc-638b78f05dcf",
+          "deckId": "deck-d4e068c4-afdd-42d5-980f-69582da16001",
+          "front": "indicate",
+          "partOfSpeech": "동",
+          "meanings": [
+            {
+              "partOfSpeech": "동",
+              "text": "나타내다, 보여주다",
+              "synonyms": [
+                "show",
+                "signify"
+              ]
+            },
+            {
+              "partOfSpeech": "",
+              "text": "가리키다",
+              "synonyms": []
+            }
+          ],
+          "audioUrl": "https://mobile3.classcard.net/uploads/audio/u/ne/en/nevoca25/NEVOCA_S2_A_DAY13_indicate.mp3",
+          "favorite": false,
+          "order": 28
+        },
+        {
+          "id": "card-adc6ce8a-aae6-4850-a029-f5c2a7ae2a3b",
+          "deckId": "deck-d4e068c4-afdd-42d5-980f-69582da16001",
+          "front": "generic",
+          "partOfSpeech": "",
+          "meanings": [
+            {
+              "partOfSpeech": "형",
+              "text": "일반적인, 포괄적인",
+              "synonyms": [
+                "common",
+                "general"
+              ]
+            }
+          ],
+          "audioUrl": "https://mobile3.classcard.net/uploads/audio/u/ne/en/nevoca25/NEVOCA_S2_A_DAY13_generic.mp3",
+          "favorite": false,
+          "order": 29
+        },
+        {
+          "id": "card-cc1fa5c3-91fc-423f-b0d3-f6445c47889a",
+          "deckId": "deck-d4e068c4-afdd-42d5-980f-69582da16001",
+          "front": "prime",
+          "partOfSpeech": "동",
+          "meanings": [
+            {
+              "partOfSpeech": "형",
+              "text": "주요한",
+              "synonyms": [
+                "main"
+              ]
+            },
+            {
+              "partOfSpeech": "형",
+              "text": "최고의, 최상의",
+              "synonyms": [
+                "peak",
+                "bloom"
+              ]
+            },
+            {
+              "partOfSpeech": "명",
+              "text": "전성기",
+              "synonyms": [
+                "peak",
+                "bloom"
+              ]
+            }
+          ],
+          "audioUrl": "https://mobile3.classcard.net/uploads/audio/u/ne/en/nevoca25/NEVOCA_S2_A_DAY13_prime.mp3",
+          "favorite": false,
+          "order": 30
+        },
+        {
+          "id": "card-2700e06a-e186-44ee-a842-773c0bfd8de5",
+          "deckId": "deck-d4e068c4-afdd-42d5-980f-69582da16001",
+          "front": "convention",
+          "partOfSpeech": "명",
+          "meanings": [
+            {
+              "partOfSpeech": "명",
+              "text": "관습, 관례",
+              "synonyms": [
+                "practice"
+              ]
+            },
+            {
+              "partOfSpeech": "",
+              "text": "협의회, 대회",
+              "synonyms": []
+            },
+            {
+              "partOfSpeech": "",
+              "text": "조약",
+              "synonyms": [
+                "treaty"
+              ]
+            }
+          ],
+          "audioUrl": "https://mobile3.classcard.net/uploads/audio/u/ne/en/nevoca25/NEVOCA_S2_A_DAY13_convention.mp3",
+          "favorite": false,
+          "order": 31
+        },
+        {
+          "id": "card-44749814-cc05-47e2-b10b-d22f2844a9d5",
+          "deckId": "deck-d4e068c4-afdd-42d5-980f-69582da16001",
+          "front": "initiate",
+          "partOfSpeech": "",
+          "meanings": [
+            {
+              "partOfSpeech": "동",
+              "text": "시작(착수)하다",
+              "synonyms": [
+                "begin",
+                "commence",
+                "launch"
+              ]
+            }
+          ],
+          "audioUrl": "https://mobile3.classcard.net/uploads/audio/u/ne/en/nevoca25/NEVOCA_S2_A_DAY13_initiate.mp3",
+          "favorite": false,
+          "order": 32
+        },
+        {
+          "id": "card-c831bea8-4ffb-47cd-b99d-8040189c54d6",
+          "deckId": "deck-d4e068c4-afdd-42d5-980f-69582da16001",
+          "front": "imprison",
+          "partOfSpeech": "",
+          "meanings": [
+            {
+              "partOfSpeech": "동",
+              "text": "투옥하다, 감금하다",
+              "synonyms": [
+                "jail",
+                "confine"
+              ]
+            }
+          ],
+          "audioUrl": "https://mobile3.classcard.net/uploads/audio/u/ne/en/nevoca25/NEVOCA_S2_A_DAY13_imprison.mp3",
+          "favorite": false,
+          "order": 33
+        },
+        {
+          "id": "card-297c5aab-93cb-4b1c-a296-638224ed184f",
+          "deckId": "deck-d4e068c4-afdd-42d5-980f-69582da16001",
+          "front": "draw back",
+          "partOfSpeech": "",
+          "meanings": [
+            {
+              "partOfSpeech": "",
+              "text": "뒤로 물러나다",
+              "synonyms": [
+                "retreat",
+                "back off"
+              ]
+            },
+            {
+              "partOfSpeech": "",
+              "text": "(입장 등을) 철회하다",
+              "synonyms": [
+                "withdraw"
+              ]
+            }
+          ],
+          "audioUrl": "https://mobile3.classcard.net/uploads/audio/u/ne/en/nevoca25/NEVOCA_S2_A_DAY13_draw%20back.mp3",
+          "favorite": false,
+          "order": 34
+        },
+        {
+          "id": "card-c8904e74-f1ec-485e-b289-1e785d2177b1",
+          "deckId": "deck-d4e068c4-afdd-42d5-980f-69582da16001",
+          "front": "seal off",
+          "partOfSpeech": "",
+          "meanings": [
+            {
+              "partOfSpeech": "",
+              "text": "봉쇄하다",
+              "synonyms": [
+                "block off"
+              ]
+            }
+          ],
+          "audioUrl": "https://mobile3.classcard.net/uploads/audio/u/ne/en/nevoca25/NEVOCA_S2_A_DAY13_seal%20off.mp3",
+          "favorite": false,
+          "order": 35
+        },
+        {
+          "id": "card-45044ee4-ff5e-4b52-ac1f-222130d89c81",
+          "deckId": "deck-d4e068c4-afdd-42d5-980f-69582da16001",
+          "front": "take off",
+          "partOfSpeech": "",
+          "meanings": [
+            {
+              "partOfSpeech": "",
+              "text": "~을 차지하다",
+              "synonyms": [
+                "occupy"
+              ]
+            },
+            {
+              "partOfSpeech": "",
+              "text": "(취미 활동 등을) 시작하다",
+              "synonyms": []
+            }
+          ],
+          "audioUrl": "",
+          "favorite": false,
+          "order": 36
+        },
+        {
+          "id": "card-5c1edae7-9302-4f03-87cd-dcac0734b46c",
+          "deckId": "deck-d4e068c4-afdd-42d5-980f-69582da16001",
+          "front": "turn up",
+          "partOfSpeech": "",
+          "meanings": [
+            {
+              "partOfSpeech": "",
+              "text": "~을 제출하다",
+              "synonyms": [
+                "hand in",
+                "submit"
+              ]
+            },
+            {
+              "partOfSpeech": "",
+              "text": "잠자리에 들다",
+              "synonyms": []
+            },
+            {
+              "partOfSpeech": "",
+              "text": "(경찰 등에) 넘기다",
+              "synonyms": []
+            }
+          ],
+          "audioUrl": "",
+          "favorite": false,
+          "order": 37
+        },
+        {
+          "id": "card-559f90c6-0a47-432a-921d-3493e0c7f6c4",
+          "deckId": "deck-d4e068c4-afdd-42d5-980f-69582da16001",
+          "front": "sole",
+          "partOfSpeech": "",
+          "meanings": [
+            {
+              "partOfSpeech": "형",
+              "text": "단 하나의, 유일한",
+              "synonyms": [
+                "only"
+              ]
+            },
+            {
+              "partOfSpeech": "",
+              "text": "단독의",
+              "synonyms": [
+                "exclusive"
+              ]
+            }
+          ],
+          "audioUrl": "",
+          "favorite": false,
+          "order": 38
+        },
+        {
+          "id": "card-07119a4e-efb1-4492-a23a-782a3e28f29c",
+          "deckId": "deck-d4e068c4-afdd-42d5-980f-69582da16001",
+          "front": "behalf",
+          "partOfSpeech": "",
+          "meanings": [
+            {
+              "partOfSpeech": "명",
+              "text": "측, 편, 이익",
+              "synonyms": []
+            }
+          ],
+          "audioUrl": "",
+          "favorite": false,
+          "order": 39
+        }
+      ],
+      "createdAt": "2026-10-20T13:44:29.572Z",
+      "updatedAt": "2026-10-20T13:53:57.318Z"
+    },
+    {
+      "id": "deck-fac00315-e08f-4484-9be1-94ae3b5f5512",
+      "name": "DAY 14",
+      "normalizedName": "day 14",
+      "cards": [
+        {
+          "id": "card-8ff41a96-168e-4eca-a8c8-8ae709ad8c2b",
+          "deckId": "deck-fac00315-e08f-4484-9be1-94ae3b5f5512",
+          "front": "proficient",
+          "partOfSpeech": "",
+          "meanings": [
+            {
+              "partOfSpeech": "형",
+              "text": "능숙한, 숙달된",
+              "synonyms": [
+                "skillful",
+                "competent"
+              ]
+            }
+          ],
+          "audioUrl": "https://mobile3.classcard.net/uploads/audio/u/ne/en/nevoca25/NEVOCA_S2_A_DAY14_proficient.mp3",
+          "favorite": false,
+          "order": 0
+        },
+        {
+          "id": "card-14e6be15-d7f3-4359-8040-65b7f30e18c0",
+          "deckId": "deck-fac00315-e08f-4484-9be1-94ae3b5f5512",
+          "front": "prolong",
+          "partOfSpeech": "동",
+          "meanings": [
+            {
+              "partOfSpeech": "동",
+              "text": "연장하다, 늘이다",
+              "synonyms": [
+                "extend",
+                "lengthen"
+              ]
+            }
+          ],
+          "audioUrl": "https://mobile3.classcard.net/uploads/audio/u/ne/en/nevoca25/NEVOCA_S2_A_DAY14_prolong.mp3",
+          "favorite": false,
+          "order": 1
+        },
+        {
+          "id": "card-b8e5f08c-550a-494c-87bb-f2296ce76bb7",
+          "deckId": "deck-fac00315-e08f-4484-9be1-94ae3b5f5512",
+          "front": "tackle",
+          "partOfSpeech": "",
+          "meanings": [
+            {
+              "partOfSpeech": "동",
+              "text": "(문제 등을) 다루다",
+              "synonyms": [
+                "deal with"
+              ]
+            },
+            {
+              "partOfSpeech": "",
+              "text": "[스포츠] 태클하다",
+              "synonyms": []
+            },
+            {
+              "partOfSpeech": "",
+              "text": "맞붙다",
+              "synonyms": []
+            },
+            {
+              "partOfSpeech": "명",
+              "text": "태클",
+              "synonyms": []
+            },
+            {
+              "partOfSpeech": "",
+              "text": "도구",
+              "synonyms": [
+                "gear"
+              ]
+            }
+          ],
+          "audioUrl": "https://mobile3.classcard.net/uploads/audio/u/ne/en/nevoca25/NEVOCA_S2_A_DAY14_tackle.mp3",
+          "favorite": false,
+          "order": 2
+        },
+        {
+          "id": "card-308f65f5-4531-4b8f-b7d4-aba64848ec4d",
+          "deckId": "deck-fac00315-e08f-4484-9be1-94ae3b5f5512",
+          "front": "defense",
+          "partOfSpeech": "명",
+          "meanings": [
+            {
+              "partOfSpeech": "명",
+              "text": "방어 (물)",
+              "synonyms": [
+                "protection",
+                "guard"
+              ]
+            },
+            {
+              "partOfSpeech": "",
+              "text": "변호",
+              "synonyms": []
+            },
+            {
+              "partOfSpeech": "",
+              "text": "(스포츠)수비",
+              "synonyms": []
+            }
+          ],
+          "audioUrl": "https://mobile3.classcard.net/uploads/audio/u/ne/en/nevoca25/NEVOCA_S2_A_DAY14_defense.mp3",
+          "favorite": false,
+          "order": 3
+        },
+        {
+          "id": "card-17ad415d-cc7f-46e0-99a2-d262f451ae07",
+          "deckId": "deck-fac00315-e08f-4484-9be1-94ae3b5f5512",
+          "front": "budget",
+          "partOfSpeech": "",
+          "meanings": [
+            {
+              "partOfSpeech": "명",
+              "text": "예산(안)",
+              "synonyms": []
+            },
+            {
+              "partOfSpeech": "동",
+              "text": "예산을 세우다",
+              "synonyms": []
+            },
+            {
+              "partOfSpeech": "형",
+              "text": "저렴한",
+              "synonyms": []
+            }
+          ],
+          "audioUrl": "https://mobile3.classcard.net/uploads/audio/u/ne/en/nevoca25/NEVOCA_S2_A_DAY14_budget.mp3",
+          "favorite": false,
+          "order": 4
+        },
+        {
+          "id": "card-8c61b7d6-f31a-41d6-a4b7-6b32516a002e",
+          "deckId": "deck-fac00315-e08f-4484-9be1-94ae3b5f5512",
+          "front": "nominate",
+          "partOfSpeech": "동",
+          "meanings": [
+            {
+              "partOfSpeech": "동",
+              "text": "지명(추천)하다",
+              "synonyms": [
+                "propose",
+                "suggest"
+              ]
+            },
+            {
+              "partOfSpeech": "동",
+              "text": "임명하다",
+              "synonyms": [
+                "appoint"
+              ]
+            }
+          ],
+          "audioUrl": "https://mobile3.classcard.net/uploads/audio/u/ne/en/nevoca25/NEVOCA_S2_A_DAY14_nominate.mp3",
+          "favorite": false,
+          "order": 5
+        },
+        {
+          "id": "card-bc8511c3-65ca-44eb-93da-607a25223f68",
+          "deckId": "deck-fac00315-e08f-4484-9be1-94ae3b5f5512",
+          "front": "rigid",
+          "partOfSpeech": "형",
+          "meanings": [
+            {
+              "partOfSpeech": "형",
+              "text": "(규칙 등이) 엄격한",
+              "synonyms": [
+                "strict"
+              ]
+            },
+            {
+              "partOfSpeech": "",
+              "text": "(사람이) 융통성 없는",
+              "synonyms": []
+            },
+            {
+              "partOfSpeech": "",
+              "text": "뻣뻣한",
+              "synonyms": [
+                "stiff"
+              ]
+            }
+          ],
+          "audioUrl": "https://mobile3.classcard.net/uploads/audio/u/ne/en/nevoca25/NEVOCA_S2_A_DAY14_rigid.mp3",
+          "favorite": false,
+          "order": 6
+        },
+        {
+          "id": "card-171d1695-2096-4a51-95be-1e4a5d89410d",
+          "deckId": "deck-fac00315-e08f-4484-9be1-94ae3b5f5512",
+          "front": "metabolism",
+          "partOfSpeech": "",
+          "meanings": [
+            {
+              "partOfSpeech": "명",
+              "text": "신진대사, 물질대사",
+              "synonyms": []
+            }
+          ],
+          "audioUrl": "https://mobile3.classcard.net/uploads/audio/u/ne/en/nevoca25/NEVOCA_S2_A_DAY14_metabolism.mp3",
+          "favorite": false,
+          "order": 7
+        },
+        {
+          "id": "card-eb17d62e-2924-48a4-acb3-0602a8d25dad",
+          "deckId": "deck-fac00315-e08f-4484-9be1-94ae3b5f5512",
+          "front": "suburb",
+          "partOfSpeech": "명",
+          "meanings": [
+            {
+              "partOfSpeech": "명",
+              "text": "교외, 근교",
+              "synonyms": [
+                "outskirts"
+              ]
+            }
+          ],
+          "audioUrl": "https://mobile3.classcard.net/uploads/audio/u/ne/en/nevoca25/NEVOCA_S2_A_DAY14_suburb.mp3",
+          "favorite": false,
+          "order": 8
+        },
+        {
+          "id": "card-74360141-1204-42e8-8ab0-6d2e5bc5dbf3",
+          "deckId": "deck-fac00315-e08f-4484-9be1-94ae3b5f5512",
+          "front": "soothe",
+          "partOfSpeech": "",
+          "meanings": [
+            {
+              "partOfSpeech": "동",
+              "text": "달래다, 진정시키다",
+              "synonyms": [
+                "calm"
+              ]
+            },
+            {
+              "partOfSpeech": "",
+              "text": "(통증 등을) 완화하다",
+              "synonyms": [
+                "relieve"
+              ]
+            }
+          ],
+          "audioUrl": "https://mobile3.classcard.net/uploads/audio/u/ne/en/nevoca25/NEVOCA_S2_A_DAY14_soothe.mp3",
+          "favorite": false,
+          "order": 9
+        },
+        {
+          "id": "card-7f3bbe89-b8ba-46d1-bc4b-2510ef9a6efd",
+          "deckId": "deck-fac00315-e08f-4484-9be1-94ae3b5f5512",
+          "front": "deplete",
+          "partOfSpeech": "",
+          "meanings": [
+            {
+              "partOfSpeech": "동",
+              "text": "고갈 시키다, 격감 시키다",
+              "synonyms": [
+                "use up",
+                "exhaust"
+              ]
+            }
+          ],
+          "audioUrl": "https://mobile3.classcard.net/uploads/audio/u/ne/en/nevoca25/NEVOCA_S2_A_DAY14_deplete.mp3",
+          "favorite": false,
+          "order": 10
+        },
+        {
+          "id": "card-6d84cbeb-6ab8-429f-8c6f-0bbaa5874b67",
+          "deckId": "deck-fac00315-e08f-4484-9be1-94ae3b5f5512",
+          "front": "prejudice",
+          "partOfSpeech": "명",
+          "meanings": [
+            {
+              "partOfSpeech": "명",
+              "text": "편견",
+              "synonyms": [
+                "bias"
+              ]
+            },
+            {
+              "partOfSpeech": "동",
+              "text": "편견을 갖게 하다",
+              "synonyms": [
+                "bias"
+              ]
+            }
+          ],
+          "audioUrl": "https://mobile3.classcard.net/uploads/audio/u/ne/en/nevoca25/NEVOCA_S2_A_DAY14_prejudice.mp3",
+          "favorite": false,
+          "order": 11
+        },
+        {
+          "id": "card-afdc4d1b-fc49-4b9d-950f-d9170bd89541",
+          "deckId": "deck-fac00315-e08f-4484-9be1-94ae3b5f5512",
+          "front": "shatter",
+          "partOfSpeech": "동",
+          "meanings": [
+            {
+              "partOfSpeech": "동",
+              "text": "(물체·희망 등이)산산이 부서지다[부수다]",
+              "synonyms": [
+                "smash"
+              ]
+            }
+          ],
+          "audioUrl": "https://mobile3.classcard.net/uploads/audio/u/ne/en/nevoca25/NEVOCA_S2_A_DAY14_shatter.mp3",
+          "favorite": false,
+          "order": 12
+        },
+        {
+          "id": "card-a83035c9-6f7c-47ff-ba57-fc8ea79c7487",
+          "deckId": "deck-fac00315-e08f-4484-9be1-94ae3b5f5512",
+          "front": "gourmet",
+          "partOfSpeech": "",
+          "meanings": [
+            {
+              "partOfSpeech": "명",
+              "text": "미식가",
+              "synonyms": []
+            },
+            {
+              "partOfSpeech": "형",
+              "text": "(음식 식당 등이) 고급의",
+              "synonyms": []
+            }
+          ],
+          "audioUrl": "https://mobile3.classcard.net/uploads/audio/u/ne/en/nevoca25/NEVOCA_S2_A_DAY14_gourmet.mp3",
+          "favorite": false,
+          "order": 13
+        },
+        {
+          "id": "card-f9b5d6d2-0e5e-4195-a829-44a9f7c656f2",
+          "deckId": "deck-fac00315-e08f-4484-9be1-94ae3b5f5512",
+          "front": "novelty",
+          "partOfSpeech": "명",
+          "meanings": [
+            {
+              "partOfSpeech": "명",
+              "text": "새로움, 참신함",
+              "synonyms": [
+                "newness",
+                "originality"
+              ]
+            },
+            {
+              "partOfSpeech": "",
+              "text": "새로운 [신기한] 것",
+              "synonyms": []
+            }
+          ],
+          "audioUrl": "https://mobile3.classcard.net/uploads/audio/u/ne/en/nevoca25/NEVOCA_S2_A_DAY14_novelty.mp3",
+          "favorite": false,
+          "order": 14
+        },
+        {
+          "id": "card-179f7d03-fd94-46eb-8096-7f7273868f2e",
+          "deckId": "deck-fac00315-e08f-4484-9be1-94ae3b5f5512",
+          "front": "obsolete",
+          "partOfSpeech": "동",
+          "meanings": [
+            {
+              "partOfSpeech": "형",
+              "text": "더는 쓸모가없는, 구식의",
+              "synonyms": [
+                "6 outdated",
+                "old-fashioned"
+              ]
+            }
+          ],
+          "audioUrl": "https://mobile3.classcard.net/uploads/audio/u/ne/en/nevoca25/NEVOCA_S2_A_DAY14_obsolete.mp3",
+          "favorite": false,
+          "order": 15
+        },
+        {
+          "id": "card-2d7dd72b-b8d0-41ed-8367-4a6aaa1100d8",
+          "deckId": "deck-fac00315-e08f-4484-9be1-94ae3b5f5512",
+          "front": "bias",
+          "partOfSpeech": "명",
+          "meanings": [
+            {
+              "partOfSpeech": "명",
+              "text": "편견, 편향",
+              "synonyms": [
+                "prejudice"
+              ]
+            },
+            {
+              "partOfSpeech": "",
+              "text": "성향",
+              "synonyms": []
+            },
+            {
+              "partOfSpeech": "동",
+              "text": "편견을 갖게 하다",
+              "synonyms": [
+                "prejudice"
+              ]
+            }
+          ],
+          "audioUrl": "https://mobile3.classcard.net/uploads/audio/u/ne/en/nevoca25/NEVOCA_S2_A_DAY14_bias.mp3",
+          "favorite": false,
+          "order": 16
+        },
+        {
+          "id": "card-9b714c73-8592-4b7d-ae42-18d8063e00f7",
+          "deckId": "deck-fac00315-e08f-4484-9be1-94ae3b5f5512",
+          "front": "obscure",
+          "partOfSpeech": "동",
+          "meanings": [
+            {
+              "partOfSpeech": "형",
+              "text": "모호한",
+              "synonyms": [
+                "ambiguous",
+                "vague"
+              ]
+            },
+            {
+              "partOfSpeech": "",
+              "text": "무명의",
+              "synonyms": [
+                "unknown"
+              ]
+            },
+            {
+              "partOfSpeech": "동",
+              "text": "가리다",
+              "synonyms": []
+            },
+            {
+              "partOfSpeech": "",
+              "text": "모호하게 하다",
+              "synonyms": []
+            }
+          ],
+          "audioUrl": "https://mobile3.classcard.net/uploads/audio/u/ne/en/nevoca25/NEVOCA_S2_A_DAY14_obscure.mp3",
+          "favorite": false,
+          "order": 17
+        },
+        {
+          "id": "card-125eac34-9d75-4f02-8d11-c20eda4bde53",
+          "deckId": "deck-fac00315-e08f-4484-9be1-94ae3b5f5512",
+          "front": "draft",
+          "partOfSpeech": "명",
+          "meanings": [
+            {
+              "partOfSpeech": "명",
+              "text": "원고, 초안",
+              "synonyms": [
+                "sketch",
+                "outline"
+              ]
+            },
+            {
+              "partOfSpeech": "명",
+              "text": "징병, 징집",
+              "synonyms": []
+            },
+            {
+              "partOfSpeech": "동",
+              "text": "초안을 쓰다",
+              "synonyms": [
+                "outline",
+                "sketch"
+              ]
+            },
+            {
+              "partOfSpeech": "",
+              "text": "징집하다",
+              "synonyms": [
+                "enlist",
+                "recruit"
+              ]
+            }
+          ],
+          "audioUrl": "https://mobile3.classcard.net/uploads/audio/u/ne/en/nevoca25/NEVOCA_S2_A_DAY14_draft.mp3",
+          "favorite": false,
+          "order": 18
+        },
+        {
+          "id": "card-2c720ec4-1613-4649-b647-fc79ef45d6f7",
+          "deckId": "deck-fac00315-e08f-4484-9be1-94ae3b5f5512",
+          "front": "represent",
+          "partOfSpeech": "동",
+          "meanings": [
+            {
+              "partOfSpeech": "동",
+              "text": "대표하다",
+              "synonyms": [
+                "stand for"
+              ]
+            },
+            {
+              "partOfSpeech": "",
+              "text": "대변하다",
+              "synonyms": [
+                "speak for"
+              ]
+            },
+            {
+              "partOfSpeech": "",
+              "text": "표현하다, 나타내다",
+              "synonyms": []
+            }
+          ],
+          "audioUrl": "https://mobile3.classcard.net/uploads/audio/u/ne/en/nevoca25/NEVOCA_S2_A_DAY14_represent.mp3",
+          "favorite": false,
+          "order": 19
+        },
+        {
+          "id": "card-fa1550cd-2f34-4b69-99a5-0ac7be23880c",
+          "deckId": "deck-fac00315-e08f-4484-9be1-94ae3b5f5512",
+          "front": "strain",
+          "partOfSpeech": "명",
+          "meanings": [
+            {
+              "partOfSpeech": "명",
+              "text": "부담, 압박",
+              "synonyms": [
+                "stress",
+                "pressure"
+              ]
+            },
+            {
+              "partOfSpeech": "",
+              "text": "염좌",
+              "synonyms": []
+            },
+            {
+              "partOfSpeech": "동",
+              "text": "(근육 등을) 혹사하다",
+              "synonyms": []
+            },
+            {
+              "partOfSpeech": "",
+              "text": "애쓰다",
+              "synonyms": [
+                "strive"
+              ]
+            }
+          ],
+          "audioUrl": "https://mobile3.classcard.net/uploads/audio/u/ne/en/nevoca25/NEVOCA_S2_A_DAY14_strain.mp3",
+          "favorite": false,
+          "order": 20
+        },
+        {
+          "id": "card-c3329ee9-225d-46e2-b155-d3f5e1407d13",
+          "deckId": "deck-fac00315-e08f-4484-9be1-94ae3b5f5512",
+          "front": "shiver",
+          "partOfSpeech": "",
+          "meanings": [
+            {
+              "partOfSpeech": "동",
+              "text": "(추위·공포 등으로) 떨다",
+              "synonyms": [
+                "tremble"
+              ]
+            }
+          ],
+          "audioUrl": "https://mobile3.classcard.net/uploads/audio/u/ne/en/nevoca25/NEVOCA_S2_A_DAY14_shiver.mp3",
+          "favorite": false,
+          "order": 21
+        },
+        {
+          "id": "card-8f3f6e42-32cf-4a32-995c-ef12f830ddf5",
+          "deckId": "deck-fac00315-e08f-4484-9be1-94ae3b5f5512",
+          "front": "vacuum",
+          "partOfSpeech": "명",
+          "meanings": [
+            {
+              "partOfSpeech": "명",
+              "text": "진공",
+              "synonyms": []
+            },
+            {
+              "partOfSpeech": "명",
+              "text": "공백",
+              "synonyms": [
+                "gap",
+                "void"
+              ]
+            },
+            {
+              "partOfSpeech": "동",
+              "text": "진공청소기로 청소하다",
+              "synonyms": []
+            }
+          ],
+          "audioUrl": "https://mobile3.classcard.net/uploads/audio/u/ne/en/nevoca25/NEVOCA_S2_A_DAY14_vacuum.mp3",
+          "favorite": false,
+          "order": 22
+        },
+        {
+          "id": "card-7f8bf04d-9835-42c7-8034-427802aaaf98",
+          "deckId": "deck-fac00315-e08f-4484-9be1-94ae3b5f5512",
+          "front": "obstacle",
+          "partOfSpeech": "명",
+          "meanings": [
+            {
+              "partOfSpeech": "명",
+              "text": "장애(물), 방해(물)",
+              "synonyms": [
+                "barrier",
+                "hindrance",
+                "impediment"
+              ]
+            }
+          ],
+          "audioUrl": "https://mobile3.classcard.net/uploads/audio/u/ne/en/nevoca25/NEVOCA_S2_A_DAY14_obstacle.mp3",
+          "favorite": false,
+          "order": 23
+        },
+        {
+          "id": "card-3a52f4d9-772f-4b82-92d9-9888809ff34b",
+          "deckId": "deck-fac00315-e08f-4484-9be1-94ae3b5f5512",
+          "front": "readily",
+          "partOfSpeech": "부",
+          "meanings": [
+            {
+              "partOfSpeech": "부",
+              "text": "손쉽게",
+              "synonyms": [
+                "easily"
+              ]
+            },
+            {
+              "partOfSpeech": "",
+              "text": "기꺼이, 선뜻",
+              "synonyms": [
+                "willingly"
+              ]
+            }
+          ],
+          "audioUrl": "https://mobile3.classcard.net/uploads/audio/u/ne/en/nevoca25/NEVOCA_S2_A_DAY14_readily.mp3",
+          "favorite": false,
+          "order": 24
+        },
+        {
+          "id": "card-adafd830-f64c-432e-9730-ab06090eb10d",
+          "deckId": "deck-fac00315-e08f-4484-9be1-94ae3b5f5512",
+          "front": "concrete",
+          "partOfSpeech": "",
+          "meanings": [
+            {
+              "partOfSpeech": "형",
+              "text": "구체적인",
+              "synonyms": []
+            },
+            {
+              "partOfSpeech": "",
+              "text": "콘크리트로 된",
+              "synonyms": []
+            },
+            {
+              "partOfSpeech": "명",
+              "text": "콘크리트",
+              "synonyms": []
+            }
+          ],
+          "audioUrl": "https://mobile3.classcard.net/uploads/audio/u/ne/en/nevoca25/NEVOCA_S2_A_DAY14_concrete.mp3",
+          "favorite": false,
+          "order": 25
+        },
+        {
+          "id": "card-1fc6c053-9fbc-4252-9935-603aa285d729",
+          "deckId": "deck-fac00315-e08f-4484-9be1-94ae3b5f5512",
+          "front": "vertebrate",
+          "partOfSpeech": "명",
+          "meanings": [
+            {
+              "partOfSpeech": "명",
+              "text": "척추동물",
+              "synonyms": []
+            }
+          ],
+          "audioUrl": "https://mobile3.classcard.net/uploads/audio/u/ne/en/nevoca25/NEVOCA_S2_A_DAY14_vertebrate.mp3",
+          "favorite": false,
+          "order": 26
+        },
+        {
+          "id": "card-da7ff352-2a25-421d-b2f2-a0fa82bed4e2",
+          "deckId": "deck-fac00315-e08f-4484-9be1-94ae3b5f5512",
+          "front": "fluid",
+          "partOfSpeech": "",
+          "meanings": [
+            {
+              "partOfSpeech": "명",
+              "text": "유체, 유동체",
+              "synonyms": [
+                "liquid"
+              ]
+            },
+            {
+              "partOfSpeech": "형",
+              "text": "유동적인, 가변적인",
+              "synonyms": [
+                "flexible"
+              ]
+            },
+            {
+              "partOfSpeech": "",
+              "text": "유동성의, 유체의",
+              "synonyms": [
+                "liquid"
+              ]
+            }
+          ],
+          "audioUrl": "https://mobile3.classcard.net/uploads/audio/u/ne/en/nevoca25/NEVOCA_S2_A_DAY14_fluid.mp3",
+          "favorite": false,
+          "order": 27
+        },
+        {
+          "id": "card-a93984ec-e34c-4b13-9469-b13fd1c822ec",
+          "deckId": "deck-fac00315-e08f-4484-9be1-94ae3b5f5512",
+          "front": "compliment",
+          "partOfSpeech": "동",
+          "meanings": [
+            {
+              "partOfSpeech": "명",
+              "text": "칭찬, 찬사",
+              "synonyms": [
+                "praise"
+              ]
+            },
+            {
+              "partOfSpeech": "동",
+              "text": "칭찬하다",
+              "synonyms": [
+                "praise",
+                "commend"
+              ]
+            }
+          ],
+          "audioUrl": "https://mobile3.classcard.net/uploads/audio/u/ne/en/nevoca25/NEVOCA_S2_A_DAY14_compliment.mp3",
+          "favorite": false,
+          "order": 28
+        },
+        {
+          "id": "card-a244a9c2-88f5-48b6-835e-6766d31a3337",
+          "deckId": "deck-fac00315-e08f-4484-9be1-94ae3b5f5512",
+          "front": "complement",
+          "partOfSpeech": "동",
+          "meanings": [
+            {
+              "partOfSpeech": "동",
+              "text": "보완[보충]하다",
+              "synonyms": [
+                "supplement",
+                "complete"
+              ]
+            },
+            {
+              "partOfSpeech": "명",
+              "text": "보완물, 보충물",
+              "synonyms": [
+                "supplement"
+              ]
+            }
+          ],
+          "audioUrl": "https://mobile3.classcard.net/uploads/audio/u/ne/en/nevoca25/NEVOCA_S2_A_DAY14_complement.mp3",
+          "favorite": false,
+          "order": 29
+        },
+        {
+          "id": "card-ae0bd062-9863-46b8-a324-1fe458c29a8d",
+          "deckId": "deck-fac00315-e08f-4484-9be1-94ae3b5f5512",
+          "front": "principle",
+          "partOfSpeech": "명",
+          "meanings": [
+            {
+              "partOfSpeech": "명",
+              "text": "원리, 원칙",
+              "synonyms": []
+            },
+            {
+              "partOfSpeech": "",
+              "text": "신념, 주의",
+              "synonyms": [
+                "belief"
+              ]
+            }
+          ],
+          "audioUrl": "https://mobile3.classcard.net/uploads/audio/u/ne/en/nevoca25/NEVOCA_S2_A_DAY14_principle.mp3",
+          "favorite": false,
+          "order": 30
+        },
+        {
+          "id": "card-a76aaa43-efc0-49a1-9f4d-84fa1c554816",
+          "deckId": "deck-fac00315-e08f-4484-9be1-94ae3b5f5512",
+          "front": "principal",
+          "partOfSpeech": "",
+          "meanings": [
+            {
+              "partOfSpeech": "형",
+              "text": "주요한, 주된",
+              "synonyms": [
+                "main",
+                "chief"
+              ]
+            },
+            {
+              "partOfSpeech": "명",
+              "text": "교장",
+              "synonyms": []
+            }
+          ],
+          "audioUrl": "https://mobile3.classcard.net/uploads/audio/u/ne/en/nevoca25/NEVOCA_S2_A_DAY14_principal.mp3",
+          "favorite": false,
+          "order": 31
+        },
+        {
+          "id": "card-a03bd824-279d-4c2b-983b-4fabc250e24d",
+          "deckId": "deck-fac00315-e08f-4484-9be1-94ae3b5f5512",
+          "front": "insulate",
+          "partOfSpeech": "동",
+          "meanings": [
+            {
+              "partOfSpeech": "동",
+              "text": "절연 [단열/방음]하다",
+              "synonyms": []
+            },
+            {
+              "partOfSpeech": "동",
+              "text": "(~로부터) 보호[격리]하다",
+              "synonyms": [
+                "shield",
+                "isolate"
+              ]
+            }
+          ],
+          "audioUrl": "https://mobile3.classcard.net/uploads/audio/u/ne/en/nevoca25/NEVOCA_S2_A_DAY14_insulate.mp3",
+          "favorite": false,
+          "order": 32
+        },
+        {
+          "id": "card-25b26c60-f932-48ed-9691-fa76eacf7c31",
+          "deckId": "deck-fac00315-e08f-4484-9be1-94ae3b5f5512",
+          "front": "ragged",
+          "partOfSpeech": "",
+          "meanings": [
+            {
+              "partOfSpeech": "형",
+              "text": "(옷이) 다 해진, 누더기의",
+              "synonyms": [
+                "worn",
+                "shabby"
+              ]
+            },
+            {
+              "partOfSpeech": "",
+              "text": "(표면 등이) 고르지 못한",
+              "synonyms": [
+                "uneven",
+                "jagged"
+              ]
+            }
+          ],
+          "audioUrl": "https://mobile3.classcard.net/uploads/audio/u/ne/en/nevoca25/NEVOCA_S2_A_DAY14_ragged.mp3",
+          "favorite": false,
+          "order": 33
+        },
+        {
+          "id": "card-94b85d8e-c18b-4ff2-aece-d6519ccaa37f",
+          "deckId": "deck-fac00315-e08f-4484-9be1-94ae3b5f5512",
+          "front": "come up to",
+          "partOfSpeech": "",
+          "meanings": [
+            {
+              "partOfSpeech": "",
+              "text": "~에 다가가다",
+              "synonyms": [
+                "approach"
+              ]
+            },
+            {
+              "partOfSpeech": "",
+              "text": "(기대 등에) 부합하다",
+              "synonyms": [
+                "live up to",
+                "meet"
+              ]
+            }
+          ],
+          "audioUrl": "https://mobile3.classcard.net/uploads/audio/u/ne/en/nevoca25/NEVOCA_S2_A_DAY14_come%20up%20to.mp3",
+          "favorite": false,
+          "order": 34
+        },
+        {
+          "id": "card-87e176a9-2689-493c-9095-a357a747a9d9",
+          "deckId": "deck-fac00315-e08f-4484-9be1-94ae3b5f5512",
+          "front": "look to",
+          "partOfSpeech": "",
+          "meanings": [
+            {
+              "partOfSpeech": "",
+              "text": "~에게 (도움 등을) 기대하다, ~에 기대다",
+              "synonyms": [
+                "rely on",
+                "turn to"
+              ]
+            },
+            {
+              "partOfSpeech": "",
+              "text": "~을 고려하다",
+              "synonyms": []
+            }
+          ],
+          "audioUrl": "https://mobile3.classcard.net/uploads/audio/u/ne/en/nevoca25/NEVOCA_S2_A_DAY14_look%20to.mp3",
+          "favorite": false,
+          "order": 35
+        },
+        {
+          "id": "card-6f4769c6-d051-4e69-a73f-e24c08d032d0",
+          "deckId": "deck-fac00315-e08f-4484-9be1-94ae3b5f5512",
+          "front": "carry out",
+          "partOfSpeech": "",
+          "meanings": [
+            {
+              "partOfSpeech": "",
+              "text": "~을 수행[이행]하다",
+              "synonyms": [
+                "perform",
+                "conduct",
+                "fulfill"
+              ]
+            }
+          ],
+          "audioUrl": "https://mobile3.classcard.net/uploads/audio/u/ne/en/nevoca25/NEVOCA_S2_A_DAY14_carry%20out.mp3",
+          "favorite": false,
+          "order": 36
+        },
+        {
+          "id": "card-2d289217-40be-4644-8a24-f99cad1ceae6",
+          "deckId": "deck-fac00315-e08f-4484-9be1-94ae3b5f5512",
+          "front": "refrain",
+          "partOfSpeech": "",
+          "meanings": [
+            {
+              "partOfSpeech": "동",
+              "text": "((~ from)) 삼가다",
+              "synonyms": [
+                "abstain",
+                "desist"
+              ]
+            },
+            {
+              "partOfSpeech": "명",
+              "text": "자주 반복되는 말[불평]",
+              "synonyms": []
+            },
+            {
+              "partOfSpeech": "",
+              "text": "후렴",
+              "synonyms": [
+                "chorus"
+              ]
+            }
+          ],
+          "audioUrl": "https://mobile3.classcard.net/uploads/audio/u/ne/en/nevoca25/NEVOCA_S2_A_DAY14_refrain.mp3",
+          "favorite": false,
+          "order": 37
+        },
+        {
+          "id": "card-036513ef-cb99-45ef-b6af-f45f66cf3133",
+          "deckId": "deck-fac00315-e08f-4484-9be1-94ae3b5f5512",
+          "front": "accord",
+          "partOfSpeech": "",
+          "meanings": [
+            {
+              "partOfSpeech": "명",
+              "text": "일치, 합의",
+              "synonyms": [
+                "agreement"
+              ]
+            },
+            {
+              "partOfSpeech": "동",
+              "text": "((~ with)) 일치하다",
+              "synonyms": []
+            },
+            {
+              "partOfSpeech": "",
+              "text": "(권위 등을) 부여하다",
+              "synonyms": [
+                "grant"
+              ]
+            }
+          ],
+          "audioUrl": "https://mobile3.classcard.net/uploads/audio/u/ne/en/nevoca25/NEVOCA_S2_A_DAY14_accord.mp3",
+          "favorite": false,
+          "order": 38
+        },
+        {
+          "id": "card-dee937d1-5533-4890-a3a0-ae766699e51b",
+          "deckId": "deck-fac00315-e08f-4484-9be1-94ae3b5f5512",
+          "front": "be anxious for",
+          "partOfSpeech": "",
+          "meanings": [
+            {
+              "partOfSpeech": "",
+              "text": "~을 갈망하다, 매우 하고 싶어 하다",
+              "synonyms": [
+                "be eager for"
+              ]
+            }
+          ],
+          "audioUrl": "https://mobile3.classcard.net/uploads/audio/u/ne/en/nevoca25/NEVOCA_S2_A_DAY14_be%20anxious%20for.mp3",
+          "favorite": false,
+          "order": 39
+        }
+      ],
+      "createdAt": "2026-10-20T14:13:30.098Z",
+      "updatedAt": "2026-10-20T14:13:30.098Z"
+    }
+  ]
+}

@@ -1,0 +1,33 @@
+<!doctype html>
+<html lang="ko">
+<head>
+  <meta charset="utf-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1, viewport-fit=cover">
+  <meta name="theme-color" content="#f4f6fa">
+  <title>암기하기 - 모바일 학습</title>
+  <link rel="stylesheet" href="mobile.css">
+  <script src="mobile.js" defer></script>
+</head>
+<body>
+  <main class="mobile-card-page" data-mobile-page="cards">
+    <header class="mobile-card-top">
+      <a class="mobile-back" href="mobile_words.html">← 단어 목록</a>
+      <button class="mobile-card-favorite-indicator" type="button" aria-label="즐겨찾기 여부" aria-pressed="false">☆</button>
+      <span class="mobile-card-position" aria-live="polite"></span>
+    </header>
+    <section class="mobile-card-stage" aria-label="암기 카드">
+      <div class="mobile-flashcard" role="button" tabindex="0" aria-pressed="false" aria-label="뜻 보기">
+        <div class="mobile-card-front"></div>
+        <div class="mobile-card-back" aria-hidden="true"></div>
+      </div>
+    </section>
+    <nav class="mobile-card-controls" aria-label="카드 학습 조작">
+      <button class="secondary" type="button" data-action="previous">이전</button>
+      <button class="secondary" type="button" data-action="next">다음</button>
+      <button class="secondary" type="button" data-action="audio" aria-label="발음 듣기">🔊 듣기</button>
+      <button class="favorite" type="button" data-action="toggle-favorites" aria-pressed="false">☆ 즐겨찾기만 보기</button>
+    </nav>
+    <p class="mobile-status" role="status" aria-live="polite" hidden></p>
+  </main>
+</body>
+</html>
